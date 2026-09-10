@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#ffffff">
   <title>Philip Osborne — Data Science & Machine Learning</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260910-11">
+  <link rel="stylesheet" href="styles.css?v=20260910-12">
   <style>
     .career-history {
       position: relative;
@@ -67,163 +67,188 @@
       text-transform: uppercase;
     }
 
-    /* Projects & achievements showcase */
-    .showcase-heading { max-width: 780px; margin-bottom: 34px; }
-    .showcase-heading p { color: var(--dark-muted); }
-    .showcase-group + .showcase-group { margin-top: 42px; }
-    .showcase-group-title {
-      margin: 0 0 15px;
-      color: #d8e2ec;
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
+    /* Independent work showcase */
+    .showcase-heading {
+      max-width: none;
+      margin-bottom: 28px;
     }
-    .project-showcase-grid {
+    .showcase-stats {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .showcase-card {
-      min-width: 0;
-      min-height: 210px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      border: 1px solid rgba(213,225,237,.18);
-      border-radius: 14px;
-      background: rgba(255,255,255,.035);
-      color: white;
-      text-decoration: none;
-      transition: transform .15s ease, border-color .15s ease, background .15s ease;
-    }
-    .showcase-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(213,225,237,.38);
-      background: rgba(255,255,255,.06);
-    }
-    .showcase-type {
-      margin-bottom: 12px;
-      color: #98acc2;
-      font-size: .68rem;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-    .showcase-card h3 {
-      margin: 0;
-      color: white;
-      font-size: 1.16rem;
-      line-height: 1.2;
-      letter-spacing: -.015em;
-    }
-    .showcase-card p {
-      margin: 9px 0 16px;
-      color: var(--dark-muted);
-      font-size: .9rem;
-      line-height: 1.5;
-    }
-    .showcase-footer {
-      margin-top: auto;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .showcase-tech {
-      color: #9fb0c1;
-      font-size: .72rem;
-      line-height: 1.4;
-    }
-    .showcase-link {
-      flex: 0 0 auto;
-      color: white;
-      font-size: .78rem;
-      font-weight: 750;
-    }
-    .showcase-links {
-      margin-top: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 16px;
-    }
-    .showcase-links a {
-      color: white;
-      font-size: .78rem;
-      font-weight: 750;
-      text-decoration: none;
-    }
-    .showcase-links a:hover { text-decoration: underline; }
-    .recognition-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      margin-bottom: 32px;
       border-top: 1px solid rgba(213,225,237,.18);
       border-bottom: 1px solid rgba(213,225,237,.18);
     }
-    .recognition-item {
+    .showcase-stat {
       min-width: 0;
-      padding: 19px 17px;
+      padding: 17px 14px;
       border-right: 1px solid rgba(213,225,237,.14);
       color: white;
       text-decoration: none;
     }
-    .recognition-item:first-child { padding-left: 0; }
-    .recognition-item:last-child { padding-right: 0; border-right: 0; }
-    .recognition-item:hover strong { text-decoration: underline; text-underline-offset: 3px; }
-    .recognition-item strong {
+    .showcase-stat:first-child { padding-left: 0; }
+    .showcase-stat:last-child { border-right: 0; padding-right: 0; }
+    .showcase-stat strong {
       display: block;
       color: white;
-      font-size: .92rem;
-      line-height: 1.25;
-    }
-    .recognition-item span {
-      display: block;
-      margin-top: 5px;
-      color: var(--dark-muted);
-      font-size: .78rem;
-      line-height: 1.42;
-    }
-    .recognition-stat {
-      display: block;
-      margin-bottom: 7px;
-      color: white;
-      font-size: 1.5rem;
-      font-weight: 800;
+      font-size: 1.35rem;
+      font-weight: 820;
       line-height: 1;
       letter-spacing: -.025em;
     }
-    .more-builds {
-      margin-top: 15px;
+    .showcase-stat span {
+      display: block;
+      margin-top: 6px;
+      color: var(--dark-muted);
+      font-size: .72rem;
+      line-height: 1.35;
+    }
+    a.showcase-stat:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+
+    .showcase-list {
+      border-top: 1px solid rgba(213,225,237,.18);
+    }
+    .showcase-entry {
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1.1fr) minmax(270px, .95fr) auto;
+      gap: 20px;
+      align-items: start;
+      padding: 21px 0;
+      border-bottom: 1px solid rgba(213,225,237,.14);
+    }
+    .showcase-date {
+      color: #91a6bc;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .045em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+    .showcase-main h3 {
+      margin: 0;
+      color: white;
+      font-size: 1.05rem;
+      line-height: 1.2;
+      letter-spacing: -.012em;
+    }
+    .showcase-main p {
+      margin: 6px 0 0;
+      color: var(--dark-muted);
+      font-size: .84rem;
+      line-height: 1.45;
+    }
+    .showcase-skill-set {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .showcase-skill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 3px 8px;
+      border: 1px solid rgba(213,225,237,.18);
+      border-radius: 999px;
+      background: rgba(255,255,255,.035);
+      color: #d8e2ec;
+      font-size: .68rem;
+      font-weight: 700;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .showcase-actions {
+      min-width: 105px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px;
+      color: #9fb0c1;
+      font-size: .72rem;
+      line-height: 1.35;
+      text-align: right;
+    }
+    .showcase-actions strong {
+      color: white;
+      font-size: .74rem;
+    }
+    .showcase-actions a {
+      color: white;
+      font-weight: 750;
+      text-decoration: none;
+    }
+    .showcase-actions a:hover { text-decoration: underline; }
+    .showcase-extra-links {
+      margin-top: 17px;
       display: flex;
       flex-wrap: wrap;
       gap: 8px 18px;
       color: var(--dark-muted);
-      font-size: .8rem;
+      font-size: .78rem;
     }
-    .more-builds strong { color: #d8e2ec; }
-    .more-builds a { color: white; text-decoration: none; font-weight: 700; }
-    .more-builds a:hover { text-decoration: underline; }
+    .showcase-extra-links a {
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .showcase-extra-links a:hover { text-decoration: underline; }
+    .recognition-line {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      margin-top: 27px;
+      border-top: 1px solid rgba(213,225,237,.18);
+      border-bottom: 1px solid rgba(213,225,237,.18);
+    }
+    .recognition-line > div,
+    .recognition-line > a {
+      padding: 16px 18px;
+      border-right: 1px solid rgba(213,225,237,.14);
+      color: var(--dark-muted);
+      font-size: .78rem;
+      line-height: 1.4;
+      text-decoration: none;
+    }
+    .recognition-line > :first-child { padding-left: 0; }
+    .recognition-line > :last-child { border-right: 0; padding-right: 0; }
+    .recognition-line strong {
+      display: block;
+      margin-bottom: 3px;
+      color: white;
+      font-size: .84rem;
+    }
 
-    @media (max-width: 920px) {
-      .project-showcase-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .recognition-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .recognition-item { border-bottom: 1px solid rgba(213,225,237,.14); }
-      .recognition-item:nth-child(2n) { border-right: 0; }
-      .recognition-item:first-child { padding-left: 17px; }
-      .recognition-item:last-child { padding-right: 17px; }
+    @media (max-width: 980px) {
+      .showcase-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .showcase-stat:nth-child(3n) { border-right: 0; }
+      .showcase-stat:nth-child(-n+3) { border-bottom: 1px solid rgba(213,225,237,.14); }
+      .showcase-stat:first-child { padding-left: 14px; }
+      .showcase-stat:last-child { padding-right: 14px; }
+      .showcase-entry { grid-template-columns: 72px minmax(0, 1fr) minmax(230px, .8fr); }
+      .showcase-actions { grid-column: 2 / -1; flex-direction: row; align-items: center; justify-content: flex-start; text-align: left; }
     }
     @media (max-width: 820px) {
       .career-history { padding-top: 27px; }
       .career-step { flex: 0 1 auto; }
+      .showcase-entry { grid-template-columns: 70px minmax(0, 1fr); }
+      .showcase-skill-set, .showcase-actions { grid-column: 2; }
+      .recognition-line { grid-template-columns: 1fr; }
+      .recognition-line > div, .recognition-line > a { padding: 14px 0; border-right: 0; border-bottom: 1px solid rgba(213,225,237,.14); }
+      .recognition-line > :last-child { border-bottom: 0; }
     }
     @media (max-width: 620px) {
       .career-history { margin-top: 38px; padding-top: 25px; }
       .career-track-label { font-size: .66rem; }
       .career-arrow { width: 17px; height: 17px; transform: rotate(90deg); }
-      .project-showcase-grid, .recognition-grid { grid-template-columns: 1fr; }
-      .showcase-card { min-height: 0; }
-      .recognition-item { padding: 16px 0; border-right: 0; }
-      .recognition-item:first-child, .recognition-item:last-child { padding-left: 0; padding-right: 0; }
+      .showcase-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .showcase-stat { padding: 14px 10px; border-bottom: 1px solid rgba(213,225,237,.14); }
+      .showcase-stat:nth-child(2n) { border-right: 0; }
+      .showcase-stat:nth-child(3n) { border-right: 1px solid rgba(213,225,237,.14); }
+      .showcase-stat:nth-child(6) { border-right: 0; }
+      .showcase-stat:first-child { padding-left: 10px; }
+      .showcase-stat:last-child { padding-right: 10px; }
+      .showcase-entry { grid-template-columns: 1fr; gap: 8px; padding: 18px 0; }
+      .showcase-date, .showcase-skill-set, .showcase-actions { grid-column: 1; }
+      .showcase-actions { margin-top: 3px; }
     }
   </style>
 </head>
@@ -234,7 +259,7 @@
       <nav class="nav" aria-label="Primary navigation">
         <a href="#experience">Experience</a>
         <a href="#skills">Core Skills</a>
-        <a href="#achievements">Projects & Achievements</a>
+        <a href="#achievements">Projects & Recognition</a>
         <a href="#research">Publications</a>
         <a href="https://github.com/pdfosborne" target="_blank" rel="noreferrer">GitHub ↗</a>
       </nav>
@@ -344,94 +369,74 @@
     <section class="section section-dark" id="achievements">
       <div class="shell">
         <div class="section-heading compact inverse showcase-heading">
-          <h2>Projects & Achievements</h2>
-          <p>Independent builds, public work and recognition beyond my core roles.</p>
+          <h2>Independent Projects, Public Work & Recognition</h2>
         </div>
 
-        <div class="showcase-group">
-          <h3 class="showcase-group-title">Independent projects</h3>
-          <div class="project-showcase-grid">
-            <a class="showcase-card" href="https://github.com/pdfosborne/rlbridge" target="_blank" rel="noreferrer">
-              <span class="showcase-type">Open-source · AI tooling</span>
-              <h3>RL Bridge</h3>
-              <p>An MCP plugin that connects language models to reinforcement-learning environments and automates how agents construct, interpret and train on RL problems.</p>
-              <div class="showcase-footer"><span class="showcase-tech">LLMs · RL · MCP · Python</span><span class="showcase-link">GitHub ↗</span></div>
-            </a>
+        <div class="showcase-stats" aria-label="Public activity and recognition statistics">
+          <a class="showcase-stat" href="https://github.com/pdfosborne" target="_blank" rel="noreferrer"><strong>1,679</strong><span>GitHub contributions<br>2025–2026 YTD</span></a>
+          <a class="showcase-stat" href="https://github.com/pdfosborne/elsciRL" target="_blank" rel="noreferrer"><strong>18</strong><span>GitHub stars<br>elsciRL</span></a>
+          <a class="showcase-stat" href="https://medium.com/@PhilipOsborne" target="_blank" rel="noreferrer"><strong>400k+</strong><span>Technical article views<br>Medium</span></a>
+          <a class="showcase-stat" href="https://medium.com/@PhilipOsborne" target="_blank" rel="noreferrer"><strong>1,300+</strong><span>Technical writing followers<br>Medium</span></a>
+          <a class="showcase-stat" href="https://www.kaggle.com/osbornep" target="_blank" rel="noreferrer"><strong>#350</strong><span>Highest world ranking<br>Kaggle Notebook Expert</span></a>
+          <a class="showcase-stat" href="https://www.kaggle.com/osbornep" target="_blank" rel="noreferrer"><strong>2</strong><span>Monetary awards<br>Google via Kaggle</span></a>
+        </div>
 
-            <a class="showcase-card" href="https://github.com/pdfosborne/flesh-and-blood-rlbridge" target="_blank" rel="noreferrer">
-              <span class="showcase-type">Independent · ML engineering</span>
-              <h3>Strategic game RL simulator</h3>
-              <p>Built a large-scale self-play training and evaluation stack around a strategic card-game engine, with PPO agents and accelerated simulation.</p>
-              <div class="showcase-footer"><span class="showcase-tech">PyTorch · PPO · Gym · Docker · C++</span><span class="showcase-link">GitHub ↗</span></div>
-            </a>
-
-            <div class="showcase-card">
-              <span class="showcase-type">Open-source · Research software</span>
-              <h3>elsciRL</h3>
-              <p>Turned doctoral research into a reusable framework for integrating natural-language and LLM-based solutions into reinforcement learning.</p>
-              <div class="showcase-links"><a href="https://elsci.org/" target="_blank" rel="noreferrer">Website ↗</a><a href="https://github.com/pdfosborne/elsciRL" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://arxiv.org/abs/2507.08705" target="_blank" rel="noreferrer">Paper ↗</a></div>
-            </div>
-
-            <a class="showcase-card" href="https://phlipapp.com/Homepage" target="_blank" rel="noreferrer">
-              <span class="showcase-type">Independent · Product development</span>
-              <h3>Privacy-first group planning platform</h3>
-              <p>Designing and building a self-hosted group planning product on Android hardware, deliberately outside my core ML domain.</p>
-              <div class="showcase-footer"><span class="showcase-tech">JavaScript · HTML/CSS · Android · Product design</span><span class="showcase-link">Live site ↗</span></div>
-            </a>
-
-            <div class="showcase-card">
-              <span class="showcase-type">Experimental · Generative AI</span>
-              <h3>DnD AI Recap</h3>
-              <p>Transcribes tabletop sessions, creates AI-generated scene imagery from the transcript and composes the result into a recap video.</p>
-              <div class="showcase-links"><a href="https://github.com/pdfosborne/dnd-video-recap" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://youtu.be/k8tsXx1lR80" target="_blank" rel="noreferrer">Demo ↗</a></div>
-            </div>
-
-            <div class="showcase-card">
-              <span class="showcase-type">Practical tool · Browser extension</span>
-              <h3>Firefox ElevenLabs interface</h3>
-              <p>Built a lightweight Firefox extension for one-key text-to-speech using the ElevenLabs API, originally to solve a personal accessibility need.</p>
-              <div class="showcase-links"><a href="https://addons.mozilla.org/en-US/firefox/addon/elevenlabs-tts-interface/" target="_blank" rel="noreferrer">Extension ↗</a><a href="https://github.com/pdfosborne/firefox-elevenlabs/blob/main/README.md" target="_blank" rel="noreferrer">GitHub ↗</a></div>
-            </div>
+        <div class="showcase-list">
+          <div class="showcase-entry">
+            <div class="showcase-date">2026<br>current</div>
+            <div class="showcase-main"><h3>Privacy-first group planning platform</h3><p>Independently designing and building a self-hosted group-planning product, including the product architecture, interaction design and implementation.</p></div>
+            <div class="showcase-skill-set"><span class="showcase-skill">JavaScript</span><span class="showcase-skill">HTML/CSS</span><span class="showcase-skill">Android</span><span class="showcase-skill">Product design</span><span class="showcase-skill">Self-hosting</span></div>
+            <div class="showcase-actions"><strong>Live product</strong><a href="https://phlipapp.com/Homepage" target="_blank" rel="noreferrer">View site ↗</a></div>
           </div>
 
-          <div class="more-builds">
-            <strong>More builds:</strong>
-            <a href="https://marketplace.visualstudio.com/items?itemName=PhilipOsborne.eva-plus-theme" target="_blank" rel="noreferrer">Eva Plus VS Code theme ↗</a>
-            <a href="https://github.com/pdfosborne/elsciRL-App-Chess" target="_blank" rel="noreferrer">Chess RL app ↗</a>
-            <a href="https://github.com/pdfosborne/elsciRL-App-Sailing" target="_blank" rel="noreferrer">Sailing simulation ↗</a>
-            <a href="https://github.com/pdfosborne/elsciRL-App-TextWorldExpress" target="_blank" rel="noreferrer">TextWorld Express ↗</a>
+          <div class="showcase-entry">
+            <div class="showcase-date">2026</div>
+            <div class="showcase-main"><h3>Strategic game RL simulator</h3><p>Built a large-scale training and evaluation stack around a strategic card-game engine, including PPO agents and accelerated simulation.</p></div>
+            <div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">PyTorch</span><span class="showcase-skill">PPO</span><span class="showcase-skill">Gym APIs</span><span class="showcase-skill">Docker</span><span class="showcase-skill">C++ / pybind11</span></div>
+            <div class="showcase-actions"><strong>★ 1 GitHub star</strong><a href="https://github.com/pdfosborne/flesh-and-blood-rlbridge" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+          </div>
+
+          <div class="showcase-entry">
+            <div class="showcase-date">2026</div>
+            <div class="showcase-main"><h3>RL Bridge</h3><p>Built an MCP plugin connecting language models to reinforcement-learning environments and automating how agents construct and train on RL problems.</p></div>
+            <div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">LLMs</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">MCP</span><span class="showcase-skill">Agent tooling</span></div>
+            <div class="showcase-actions"><strong>★ 1 GitHub star</strong><a href="https://github.com/pdfosborne/rlbridge" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+          </div>
+
+          <div class="showcase-entry">
+            <div class="showcase-date">2024–2025</div>
+            <div class="showcase-main"><h3>elsciRL</h3><p>Turned doctoral research into an open-source framework for integrating natural-language and LLM-based solutions into reinforcement learning.</p></div>
+            <div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">LLMs / NLP</span><span class="showcase-skill">Framework design</span><span class="showcase-skill">Research translation</span></div>
+            <div class="showcase-actions"><strong>★ 18 GitHub stars</strong><a href="https://elsci.org/" target="_blank" rel="noreferrer">Website ↗</a><a href="https://github.com/pdfosborne/elsciRL" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://arxiv.org/abs/2507.08705" target="_blank" rel="noreferrer">Paper ↗</a></div>
+          </div>
+
+          <div class="showcase-entry">
+            <div class="showcase-date">2025</div>
+            <div class="showcase-main"><h3>DnD AI Recap</h3><p>Built a pipeline that transcribes tabletop sessions, generates scene imagery from the transcript and composes the result into a recap video.</p></div>
+            <div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">OpenAI API</span><span class="showcase-skill">Transcription</span><span class="showcase-skill">Image generation</span><span class="showcase-skill">Video pipeline</span></div>
+            <div class="showcase-actions"><a href="https://github.com/pdfosborne/dnd-video-recap" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://youtu.be/k8tsXx1lR80" target="_blank" rel="noreferrer">Demo ↗</a></div>
+          </div>
+
+          <div class="showcase-entry">
+            <div class="showcase-date">2025</div>
+            <div class="showcase-main"><h3>Firefox ElevenLabs interface</h3><p>Built a lightweight browser extension for one-key text-to-speech using the ElevenLabs API to solve a practical accessibility need.</p></div>
+            <div class="showcase-skill-set"><span class="showcase-skill">JavaScript</span><span class="showcase-skill">Browser extensions</span><span class="showcase-skill">REST APIs</span><span class="showcase-skill">Accessibility</span></div>
+            <div class="showcase-actions"><strong>★ 1 GitHub star</strong><a href="https://addons.mozilla.org/en-US/firefox/addon/elevenlabs-tts-interface/" target="_blank" rel="noreferrer">Firefox add-on ↗</a><a href="https://github.com/pdfosborne/firefox-elevenlabs" target="_blank" rel="noreferrer">GitHub ↗</a></div>
           </div>
         </div>
 
-        <div class="showcase-group">
-          <h3 class="showcase-group-title">Recognition & reach</h3>
-          <div class="recognition-grid">
-            <a class="recognition-item" href="https://www.kaggle.com/osbornep" target="_blank" rel="noreferrer">
-              <span class="recognition-stat">#350</span>
-              <strong>Kaggle Notebook Expert</strong>
-              <span>Highest world ranking, plus two monetary awards from Google via Kaggle. ↗</span>
-            </a>
-            <a class="recognition-item" href="https://medium.com/@PhilipOsborne" target="_blank" rel="noreferrer">
-              <span class="recognition-stat">400k+</span>
-              <strong>Technical writing</strong>
-              <span>Views across data science and reinforcement-learning articles, with 1,300+ followers. ↗</span>
-            </a>
-            <div class="recognition-item">
-              <span class="recognition-stat">Award</span>
-              <strong>Commercialisation & Innovation</strong>
-              <span>University of Manchester Business School.</span>
-            </div>
-            <div class="recognition-item">
-              <span class="recognition-stat">Teaching</span>
-              <strong>Guest lecturer</strong>
-              <span>University of Manchester and University of Oxford.</span>
-            </div>
-            <a class="recognition-item" href="https://elsci.org/" target="_blank" rel="noreferrer">
-              <span class="recognition-stat">Patent</span>
-              <strong>US application 18/955718</strong>
-              <span>Patent application associated with the elsciRL framework. ↗</span>
-            </a>
-          </div>
+        <div class="showcase-extra-links">
+          <span>Also built:</span>
+          <a href="https://marketplace.visualstudio.com/items?itemName=PhilipOsborne.eva-plus-theme" target="_blank" rel="noreferrer">Eva Plus VS Code theme ↗</a>
+          <a href="https://github.com/pdfosborne/elsciRL-App-Chess" target="_blank" rel="noreferrer">Chess RL app ↗</a>
+          <a href="https://github.com/pdfosborne/elsciRL-App-Sailing" target="_blank" rel="noreferrer">Sailing simulation ↗</a>
+          <a href="https://github.com/pdfosborne/elsciRL-App-TextWorldExpress" target="_blank" rel="noreferrer">TextWorld Express ↗</a>
+        </div>
+
+        <div class="recognition-line">
+          <div><strong>Commercialisation & Innovation Award</strong>University of Manchester Business School</div>
+          <div><strong>Guest lecturer</strong>University of Manchester & University of Oxford</div>
+          <a href="https://elsci.org/" target="_blank" rel="noreferrer"><strong>US patent application 18/955718</strong>Filed for the elsciRL framework ↗</a>
         </div>
       </div>
     </section>

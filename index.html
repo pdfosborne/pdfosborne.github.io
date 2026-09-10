@@ -18,6 +18,30 @@
     .career-current { color: var(--blue-dark); }
     .career-current small { display: block; margin: 0 0 3px; color: var(--blue); font-size: .64rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 
+    /* Technical stack alignment and language proficiency */
+    .tech-row { align-items: center; }
+    .tech-label { padding-top: 0; align-self: center; }
+    .tech-items-grouped { display: grid; gap: 7px; width: 100%; }
+    .tech-skill-tier { display: grid; grid-template-columns: 94px minmax(0, 1fr); gap: 10px; align-items: center; }
+    .tech-items-grouped .tech-tier-label {
+      min-height: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .055em;
+      line-height: 1.2;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .tech-tier-items { display: flex; flex-wrap: wrap; gap: 6px 7px; }
+    @media (max-width: 620px) {
+      .tech-skill-tier { grid-template-columns: 1fr; gap: 5px; }
+    }
+
     /* Projects, writing & recognition */
     .showcase-section { background: var(--surface); }
     .showcase-heading { max-width: none; margin-bottom: 28px; }
@@ -93,8 +117,8 @@
       <nav class="nav" aria-label="Primary navigation">
         <a href="#experience">Experience</a>
         <a href="#skills">Core Skills</a>
-        <a href="#achievements">Projects & Writing</a>
         <a href="#research">Publications</a>
+        <a href="#achievements">Projects & Writing</a>
         <a href="https://github.com/pdfosborne" target="_blank" rel="noreferrer">GitHub ↗</a>
       </nav>
     </div>
@@ -153,7 +177,13 @@
       <div class="tech-index" aria-label="Technical skills quick list">
         <div class="tech-index-title"><strong>Technical stack</strong><span>Languages, modelling, data and delivery</span></div>
         <div class="tech-index-groups">
-          <div class="tech-row"><span class="tech-label">Languages & data</span><div class="tech-items"><span>Python</span><span>SQL</span><span>JavaScript</span><span>C++</span><span>HTML/CSS</span><span>VBA</span></div></div>
+          <div class="tech-row">
+            <span class="tech-label">Languages</span>
+            <div class="tech-items tech-items-grouped">
+              <div class="tech-skill-tier"><span class="tech-tier-label">Fluent</span><div class="tech-tier-items"><span>Python</span><span>HTML/CSS</span><span>R</span><span>Excel</span></div></div>
+              <div class="tech-skill-tier"><span class="tech-tier-label">Experience with</span><div class="tech-tier-items"><span>SQL</span><span>JavaScript</span><span>C++</span><span>VBA</span></div></div>
+            </div>
+          </div>
           <div class="tech-row"><span class="tech-label">ML & statistics</span><div class="tech-items"><span>PyTorch</span><span>Machine Learning</span><span>Reinforcement Learning</span><span>PPO</span><span>LLMs / NLP</span><span>Experimentation / A/B testing</span><span>Model validation</span></div></div>
           <div class="tech-row"><span class="tech-label">Engineering & compute</span><div class="tech-items"><span>Git</span><span>Docker Compose</span><span>Linux</span><span>Gym APIs</span><span>pybind11</span><span>Cloud / HPC</span><span>MLOps / ML pipelines</span></div></div>
           <div class="tech-row"><span class="tech-label">Analysis & delivery</span><div class="tech-items"><span>Data preparation</span><span>Visualisation</span><span>Dashboards</span><span>Reporting</span><span>Experiment design</span><span>Deployment</span></div></div>
@@ -175,6 +205,19 @@
           <details class="skill-expander"><summary>Problem framing & business judgement</summary><div class="skill-detail"><p>Turning an open-ended question into an analytical problem that can produce a useful decision or recommendation.</p><p class="skill-proof"><strong>Evidence:</strong> Applied data science to actuarial pricing and client reporting at Psyon; developed analytical models from multinational benefits data at Aon and presented the implications to clients.</p></div></details>
           <details class="skill-expander"><summary>Cross-functional collaboration</summary><div class="skill-detail"><p>Working effectively across technical disciplines and adapting analysis to the needs of different collaborators.</p><p class="skill-proof"><strong>Evidence:</strong> Collaborated with engineering researchers and an industry partner at Bath; co-authored interdisciplinary research on agentic AI misuse; worked across research, software and domain-specific teams.</p></div></details>
           <details class="skill-expander"><summary>Independent ownership & active learning</summary><div class="skill-detail"><p>Working through ambiguity, learning unfamiliar tools and taking projects from an initial idea to a usable result.</p><p class="skill-proof"><strong>Evidence:</strong> Took elsciRL from research concept to open-source framework, paper and patent application; independently built projects spanning RL simulation, C++ acceleration and a self-hosted JavaScript group-planning platform.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="shell">
+        <div class="section-heading compact"><h2>Publications</h2><p>Peer-reviewed and applied work across reinforcement learning, natural language processing and agentic AI.</p></div>
+        <div class="publication-list">
+          <a class="publication" href="https://arxiv.org/abs/2507.08705" target="_blank" rel="noreferrer"><span class="pub-year">2025</span><span class="pub-body"><strong>elsciRL: Integrating Language Solutions into Reinforcement Learning Problem Settings</strong><small>Open-source systems work connecting language solutions with reinforcement-learning applications.</small></span><span class="arrow">↗</span></a>
+          <a class="publication" href="https://research.manchester.ac.uk/en/studentTheses/improving-real-world-reinforcement-learning-by-self-completing-hu" target="_blank" rel="noreferrer"><span class="pub-year">2024</span><span class="pub-body"><strong>Improving Real-World Reinforcement Learning by Self-Completing Human Instructions</strong><small>PhD thesis on using natural-language instructions to improve real-world reinforcement learning.</small></span><span class="arrow">↗</span></a>
+          <a class="publication" href="https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00495/112801/A-Survey-of-Text-Games-for-Reinforcement-Learning" target="_blank" rel="noreferrer"><span class="pub-year">2022</span><span class="pub-body"><strong>A Survey of Text Games for Reinforcement Learning Informed by Natural Language</strong><small>First-author peer-reviewed TACL journal article.</small></span><span class="arrow">↗</span></a>
+          <a class="publication" href="https://link.springer.com/book/10.1007/978-3-031-79167-3" target="_blank" rel="noreferrer"><span class="pub-year">2022</span><span class="pub-body"><strong>Applying Reinforcement Learning on Real-World Data with Practical Examples in Python</strong><small>First-author Springer Nature book focused on practical real-world RL applications.</small></span><span class="arrow">↗</span></a>
+          <a class="publication" href="https://aclanthology.org/2021.iwcs-1.1/" target="_blank" rel="noreferrer"><span class="pub-year">2021</span><span class="pub-body"><strong>Switching Contexts: Transportability Measures for NLP</strong><small>Peer-reviewed conference research on measuring model transfer across contexts.</small></span><span class="arrow">↗</span></a>
         </div>
       </div>
     </section>
@@ -258,19 +301,6 @@
           <div><strong>Commercialisation & Innovation Award</strong>University of Manchester Business School</div>
           <div><strong>Guest lecturer</strong>University of Manchester & University of Oxford</div>
           <a href="https://elsci.org/" target="_blank" rel="noreferrer"><strong>US patent application 18/955718</strong>Associated with the elsciRL framework ↗</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="research">
-      <div class="shell">
-        <div class="section-heading compact"><h2>Publications</h2><p>Peer-reviewed and applied work across reinforcement learning, natural language processing and agentic AI.</p></div>
-        <div class="publication-list">
-          <a class="publication" href="https://arxiv.org/abs/2507.08705" target="_blank" rel="noreferrer"><span class="pub-year">2025</span><span class="pub-body"><strong>elsciRL: Integrating Language Solutions into Reinforcement Learning Problem Settings</strong><small>Open-source systems work connecting language solutions with reinforcement-learning applications.</small></span><span class="arrow">↗</span></a>
-          <a class="publication" href="https://research.manchester.ac.uk/en/studentTheses/improving-real-world-reinforcement-learning-by-self-completing-hu" target="_blank" rel="noreferrer"><span class="pub-year">2024</span><span class="pub-body"><strong>Improving Real-World Reinforcement Learning by Self-Completing Human Instructions</strong><small>PhD thesis on using natural-language instructions to improve real-world reinforcement learning.</small></span><span class="arrow">↗</span></a>
-          <a class="publication" href="https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00495/112801/A-Survey-of-Text-Games-for-Reinforcement-Learning" target="_blank" rel="noreferrer"><span class="pub-year">2022</span><span class="pub-body"><strong>A Survey of Text Games for Reinforcement Learning Informed by Natural Language</strong><small>First-author peer-reviewed TACL journal article.</small></span><span class="arrow">↗</span></a>
-          <a class="publication" href="https://link.springer.com/book/10.1007/978-3-031-79167-3" target="_blank" rel="noreferrer"><span class="pub-year">2022</span><span class="pub-body"><strong>Applying Reinforcement Learning on Real-World Data with Practical Examples in Python</strong><small>First-author Springer Nature book focused on practical real-world RL applications.</small></span><span class="arrow">↗</span></a>
-          <a class="publication" href="https://aclanthology.org/2021.iwcs-1.1/" target="_blank" rel="noreferrer"><span class="pub-year">2021</span><span class="pub-body"><strong>Switching Contexts: Transportability Measures for NLP</strong><small>Peer-reviewed conference research on measuring model transfer across contexts.</small></span><span class="arrow">↗</span></a>
         </div>
       </div>
     </section>

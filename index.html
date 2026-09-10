@@ -14,7 +14,7 @@
     <div class="shell nav-wrap">
       <a class="brand" href="#top">Philip Osborne</a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#work">Projects</a>
+        <a href="#skills">Core Skills</a>
         <a href="#research">Publications</a>
         <a href="#experience">Experience</a>
         <a href="#achievements">Achievements</a>
@@ -30,7 +30,7 @@
           <h1>Philip Osborne — Data Scientist & Machine Learning Researcher.</h1>
           <p class="hero-copy">PhD in Artificial Intelligence with commercial data science experience and recent research applying reinforcement learning to physical control systems. I also build open-source ML tools and independent software projects.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#work">View selected projects</a>
+            <a class="button primary" href="#skills">View core skills</a>
             <a class="button secondary" href="https://github.com/pdfosborne" target="_blank" rel="noreferrer">GitHub profile ↗</a>
           </div>
         </div>
@@ -55,43 +55,72 @@
       </div>
     </section>
 
-    <section class="section shell" id="work">
+    <section class="section shell" id="skills">
       <div class="section-heading">
-        <h2>Selected Projects</h2>
-        <p>Projects selected to show how I approach unfamiliar problems: understand the system, build the tooling, evaluate it properly, and turn the result into something others can use.</p>
+        <h2>Core Skills</h2>
+        <p>Technical and professional skills backed by examples from commercial data science, research and independent engineering projects.</p>
       </div>
 
-      <div class="project-grid">
-        <article class="project-card featured">
-          <div class="card-topline"><span class="card-kicker">Applied ML · University of Bath</span><span class="card-year">2025–26</span></div>
-          <h3>Sim-to-real reinforcement learning for physical control</h3>
-          <p>Developed a reinforcement learning pipeline for control of a rigid-wing sail, taking policies from offline training through deployment and evaluation in a wind tunnel.</p>
-          <div class="flow"><span>Simulation</span><b>→</b><span>Offline RL</span><b>→</b><span>Control policy</span><b>→</b><span>Wind tunnel</span></div>
-          <div class="tags"><span>Reinforcement Learning</span><span>Python</span><span>Sim-to-real</span><span>Experiment design</span><span>Physical systems</span></div>
-        </article>
+      <div class="skills-columns">
+        <div class="skills-column">
+          <h3 class="skills-group-title">Technical</h3>
 
-        <article class="project-card">
-          <div class="card-topline"><span class="card-kicker">Independent project</span><a class="card-link" href="https://github.com/pdfosborne/flesh-and-blood-rlbridge" target="_blank" rel="noreferrer">Code ↗</a></div>
-          <h3>Strategic game RL simulator</h3>
-          <p>Built a large-scale agent training and evaluation stack around an existing game engine, including self-play PPO pipelines, Gym-compatible environments, Dockerised workflows and accelerated simulation.</p>
-          <div class="tags"><span>Python</span><span>PyTorch</span><span>PPO</span><span>Gym APIs</span><span>Docker Compose</span><span>C++</span><span>pybind11</span></div>
-          <p class="card-note">Includes multi-backend training, automated evaluation, live agent play and tooling for reproducible local setup.</p>
-        </article>
+          <article class="skill-item">
+            <h4>Machine learning & statistical modelling</h4>
+            <p class="skill-summary">Developing, comparing and evaluating models for practical problems rather than treating model choice as the end goal.</p>
+            <p class="skill-proof"><strong>Examples:</strong> Developed actuarial pricing and machine-learning predictions at Psyon; developed and evaluated reinforcement-learning methods throughout my PhD and postdoctoral research.</p>
+            <div class="skill-tags"><span>Python</span><span>PyTorch</span><span>Machine Learning</span><span>Reinforcement Learning</span><span>PPO</span></div>
+          </article>
 
-        <article class="project-card">
-          <div class="card-topline"><span class="card-kicker">Open-source ML research</span><a class="card-link" href="https://github.com/pdfosborne/elsciRL" target="_blank" rel="noreferrer">Code ↗</a></div>
-          <h3>elsciRL</h3>
-          <p>Designed and independently developed a Python framework for integrating language and LLM-based solutions into reinforcement learning, taking the work from PhD research through reusable software and academic review.</p>
-          <div class="tags"><span>Python</span><span>Reinforcement Learning</span><span>LLMs</span><span>NLP</span><span>Open source</span><span>GUI</span></div>
-          <div class="card-links"><a href="https://arxiv.org/abs/2507.08705" target="_blank" rel="noreferrer">Paper ↗</a><a href="https://elsci.org" target="_blank" rel="noreferrer">Project site ↗</a></div>
-        </article>
+          <article class="skill-item">
+            <h4>Python & ML engineering</h4>
+            <p class="skill-summary">Building reusable research and training software, with attention to reproducibility, performance and maintainability.</p>
+            <p class="skill-proof"><strong>Examples:</strong> Independently built the elsciRL open-source Python framework and a large-scale strategic-game RL stack using Docker Compose and C++/pybind11 acceleration.</p>
+            <div class="skill-tags"><span>Python</span><span>Git</span><span>Docker Compose</span><span>C++</span><span>pybind11</span><span>Gym APIs</span></div>
+          </article>
 
-        <article class="project-card">
-          <div class="card-topline"><span class="card-kicker">Independent product</span><a class="card-link" href="https://phlipapp.com/Homepage" target="_blank" rel="noreferrer">Live site ↗</a></div>
-          <h3>Privacy-first group planning platform</h3>
-          <p>Independently developing a group planning application that combines chat and calendars with self-hosting on Android hardware — a deliberately different domain used to keep pushing my product and engineering skills.</p>
-          <div class="tags"><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Android</span><span>Product design</span><span>Self-hosting</span></div>
-        </article>
+          <article class="skill-item">
+            <h4>SQL, data preparation & visualisation</h4>
+            <p class="skill-summary">Taking raw data through validation, transformation, analysis and clear reporting.</p>
+            <p class="skill-proof"><strong>Examples:</strong> Retrieved, validated and transformed SQL data at Psyon for analytical modelling and client reporting; built dashboards and automated chart-generation workflows.</p>
+            <div class="skill-tags"><span>SQL</span><span>Data validation</span><span>Data transformation</span><span>Dashboards</span><span>Reporting</span></div>
+          </article>
+
+          <article class="skill-item">
+            <h4>Experiment design & model evaluation</h4>
+            <p class="skill-summary">Designing experiments, selecting meaningful evaluation approaches and testing whether models work outside idealised settings.</p>
+            <p class="skill-proof"><strong>Examples:</strong> Took a sim-to-real RL pipeline from offline training to wind-tunnel deployment, working with engineering researchers to design experiments, analyse results and evaluate physical performance.</p>
+            <div class="skill-tags"><span>Experiment design</span><span>Model validation</span><span>Performance metrics</span><span>Sim-to-real</span></div>
+          </article>
+        </div>
+
+        <div class="skills-column">
+          <h3 class="skills-group-title">Professional</h3>
+
+          <article class="skill-item">
+            <h4>Communication</h4>
+            <p class="skill-summary">Explaining technical ideas clearly to audiences with very different levels of subject knowledge.</p>
+            <p class="skill-proof"><strong>Examples:</strong> Guest lecturer at the University of Manchester and University of Oxford; mathematics tutor from 11+ to A-Level; technical writing reaching more than 400,000 views on Medium.</p>
+          </article>
+
+          <article class="skill-item">
+            <h4>Stakeholder management & expectation setting</h4>
+            <p class="skill-summary">Keeping technical work aligned with the people who depend on it, including communicating constraints, results and trade-offs.</p>
+            <p class="skill-proof"><strong>Examples:</strong> Worked with engineering researchers and an industry partner on applied RL experiments; produced client reporting at Psyon and presented analytical findings to multinational clients at Aon.</p>
+          </article>
+
+          <article class="skill-item">
+            <h4>Problem framing & business judgement</h4>
+            <p class="skill-summary">Turning an open-ended question into an analytical problem that can produce a useful decision or recommendation.</p>
+            <p class="skill-proof"><strong>Examples:</strong> Applied data science to actuarial pricing and client reporting at Psyon; developed analytical models from multinational benefits data at Aon and presented the implications to clients.</p>
+          </article>
+
+          <article class="skill-item">
+            <h4>Independent ownership & active learning</h4>
+            <p class="skill-summary">Comfortable working through ambiguity, learning unfamiliar tools and taking projects from an initial idea to a usable result.</p>
+            <p class="skill-proof"><strong>Examples:</strong> Took elsciRL from research concept to open-source framework, paper and patent application; independently built projects spanning RL simulation, C++ acceleration and a self-hosted JavaScript group-planning platform.</p>
+          </article>
+        </div>
       </div>
     </section>
 

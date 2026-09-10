@@ -13,11 +13,14 @@
       position: relative;
       margin-top: 48px;
       padding: 29px 0 22px;
+      overflow: hidden;
+      background: linear-gradient(90deg, rgba(237,242,247,0) 0%, rgba(237,242,247,0) 56%, rgba(237,242,247,.24) 70%, rgba(61,90,128,.10) 100%);
     }
     .career-track-label {
       position: absolute;
       top: 0;
       left: 0;
+      z-index: 2;
       transform: translateY(-50%);
       margin: 0;
       padding: 0 12px 0 0;
@@ -29,10 +32,17 @@
       line-height: 1;
       text-transform: uppercase;
     }
-    .career-track { gap: 7px; }
+    .career-track {
+      position: relative;
+      z-index: 1;
+      gap: 7px;
+    }
     .career-step { flex: 1 1 0; }
-    .career-next { flex: 1.15 1 0; }
-    .career-next small { margin-top: 4px; }
+    .career-next {
+      flex: 1.28 1 0;
+      color: var(--blue-dark);
+    }
+    .career-next strong { font-weight: 820; }
     .career-arrow {
       display: inline-block;
       flex: 0 0 18px;
@@ -46,11 +56,18 @@
     }
     .career-arrow-next { background: var(--blue); }
     @media (max-width: 820px) {
-      .career-history { padding-top: 27px; }
+      .career-history {
+        padding-top: 27px;
+        background: linear-gradient(90deg, rgba(237,242,247,0) 0%, rgba(237,242,247,0) 42%, rgba(237,242,247,.28) 66%, rgba(61,90,128,.10) 100%);
+      }
       .career-step { flex: 0 1 auto; }
     }
     @media (max-width: 620px) {
-      .career-history { margin-top: 38px; padding-top: 25px; }
+      .career-history {
+        margin-top: 38px;
+        padding-top: 25px;
+        background: linear-gradient(180deg, rgba(237,242,247,0) 0%, rgba(237,242,247,0) 62%, rgba(61,90,128,.10) 100%);
+      }
       .career-track-label { font-size: .66rem; }
       .career-arrow {
         width: 17px;
@@ -107,7 +124,7 @@
         </div>
       </div>
 
-      <div class="career-history" aria-label="My history from education to next industry data science role">
+      <div class="career-history" aria-label="My history from education to seeking a new industry role">
         <div class="career-track-label">My history</div>
         <div class="career-track">
           <span class="career-step">BSc in Mathematics</span>
@@ -122,7 +139,7 @@
           <span class="career-arrow" aria-hidden="true">→</span>
           <span class="career-step">Postdoctoral Researcher</span>
           <span class="career-arrow career-arrow-next" aria-hidden="true">→</span>
-          <span class="career-step career-next"><strong>Industry Data Science</strong><small>seeking next role</small></span>
+          <span class="career-step career-next"><strong>Seeking new industry role</strong></span>
         </div>
       </div>
     </section>

@@ -7,247 +7,81 @@
   <meta name="theme-color" content="#ffffff">
   <title>Philip Osborne — Data Science & Machine Learning</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260910-12">
+  <link rel="stylesheet" href="styles.css?v=20260910-13">
   <style>
-    .career-history {
-      position: relative;
-      margin-top: 48px;
-      padding: 29px 0 22px;
-      overflow: visible;
-      background: none;
-    }
-    .career-track-label {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 2;
-      transform: translateY(-50%);
-      margin: 0;
-      padding: 0 12px 0 0;
-      background: var(--white);
-      color: var(--blue);
-      font-size: .7rem;
-      font-weight: 800;
-      letter-spacing: .11em;
-      line-height: 1;
-      text-transform: uppercase;
-    }
-    .career-track {
-      position: relative;
-      z-index: 1;
-      gap: 7px;
-    }
+    .career-history { position: relative; margin-top: 48px; padding: 29px 0 22px; overflow: visible; background: none; }
+    .career-track-label { position: absolute; top: 0; left: 0; z-index: 2; transform: translateY(-50%); margin: 0; padding: 0 12px 0 0; background: var(--white); color: var(--blue); font-size: .7rem; font-weight: 800; letter-spacing: .11em; line-height: 1; text-transform: uppercase; }
+    .career-track { position: relative; z-index: 1; gap: 7px; }
     .career-step { flex: 1 1 0; }
-    .career-arrow {
-      display: inline-block;
-      flex: 0 0 18px;
-      width: 18px;
-      height: 18px;
-      font-size: 0;
-      line-height: 0;
-      background: #a0adba;
-      -webkit-mask: url('arrow-right.svg') center / contain no-repeat;
-      mask: url('arrow-right.svg') center / contain no-repeat;
-    }
-    .hero-status {
-      margin: 16px 0 0;
-      color: var(--blue);
-      font-size: .95rem;
-      font-weight: 800;
-      letter-spacing: -.01em;
-    }
+    .career-arrow { display: inline-block; flex: 0 0 18px; width: 18px; height: 18px; font-size: 0; line-height: 0; background: #a0adba; -webkit-mask: url('arrow-right.svg') center / contain no-repeat; mask: url('arrow-right.svg') center / contain no-repeat; }
+    .hero-status { margin: 16px 0 0; color: var(--blue); font-size: .95rem; font-weight: 800; letter-spacing: -.01em; }
     .career-current { color: var(--blue-dark); }
-    .career-current small {
-      display: block;
-      margin: 0 0 3px;
-      color: var(--blue);
-      font-size: .64rem;
-      font-weight: 800;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
+    .career-current small { display: block; margin: 0 0 3px; color: var(--blue); font-size: .64rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 
-    /* Independent work showcase */
-    .showcase-heading {
-      max-width: none;
-      margin-bottom: 28px;
-    }
-    .showcase-stats {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      margin-bottom: 32px;
-      border-top: 1px solid rgba(213,225,237,.18);
-      border-bottom: 1px solid rgba(213,225,237,.18);
-    }
-    .showcase-stat {
-      min-width: 0;
-      padding: 17px 14px;
-      border-right: 1px solid rgba(213,225,237,.14);
-      color: white;
-      text-decoration: none;
-    }
-    .showcase-stat:first-child { padding-left: 0; }
-    .showcase-stat:last-child { border-right: 0; padding-right: 0; }
-    .showcase-stat strong {
-      display: block;
-      color: white;
-      font-size: 1.35rem;
-      font-weight: 820;
-      line-height: 1;
-      letter-spacing: -.025em;
-    }
-    .showcase-stat span {
-      display: block;
-      margin-top: 6px;
-      color: var(--dark-muted);
-      font-size: .72rem;
-      line-height: 1.35;
-    }
-    a.showcase-stat:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+    /* Projects, writing & recognition */
+    .showcase-section { background: var(--surface); }
+    .showcase-heading { max-width: none; margin-bottom: 28px; }
+    .showcase-heading h2 { font-size: clamp(2.25rem, 4vw, 3.5rem); white-space: nowrap; }
+    .showcase-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 30px; }
+    .showcase-stat { min-width: 0; padding: 18px 18px 17px; border: 1px solid var(--line); border-radius: 14px; background: var(--white); color: var(--ink); text-decoration: none; }
+    .showcase-stat:hover { border-color: #b8c5d2; }
+    .showcase-stat-head { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; color: var(--blue); font-size: .73rem; font-weight: 800; letter-spacing: .04em; }
+    .showcase-stat-head svg { width: 17px; height: 17px; stroke-width: 1.8; }
+    .showcase-stat strong { display: block; color: var(--ink); font-size: 1.22rem; font-weight: 820; line-height: 1.22; letter-spacing: -.018em; }
+    .showcase-stat strong small { color: var(--muted); font-size: .76rem; font-weight: 700; letter-spacing: 0; }
+    .showcase-stat span { display: block; margin-top: 5px; color: var(--muted); font-size: .76rem; line-height: 1.35; }
 
-    .showcase-list {
-      border-top: 1px solid rgba(213,225,237,.18);
-    }
-    .showcase-entry {
-      display: grid;
-      grid-template-columns: 88px minmax(0, 1.1fr) minmax(270px, .95fr) auto;
-      gap: 20px;
-      align-items: start;
-      padding: 21px 0;
-      border-bottom: 1px solid rgba(213,225,237,.14);
-    }
-    .showcase-date {
-      color: #91a6bc;
-      font-size: .72rem;
-      font-weight: 800;
-      letter-spacing: .045em;
-      line-height: 1.35;
-      text-transform: uppercase;
-    }
-    .showcase-main h3 {
-      margin: 0;
-      color: white;
-      font-size: 1.05rem;
-      line-height: 1.2;
-      letter-spacing: -.012em;
-    }
-    .showcase-main p {
-      margin: 6px 0 0;
-      color: var(--dark-muted);
-      font-size: .84rem;
-      line-height: 1.45;
-    }
-    .showcase-skill-set {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .showcase-skill {
-      display: inline-flex;
-      align-items: center;
-      min-height: 24px;
-      padding: 3px 8px;
-      border: 1px solid rgba(213,225,237,.18);
-      border-radius: 999px;
-      background: rgba(255,255,255,.035);
-      color: #d8e2ec;
-      font-size: .68rem;
-      font-weight: 700;
-      line-height: 1.2;
-      white-space: nowrap;
-    }
-    .showcase-actions {
-      min-width: 105px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 5px;
-      color: #9fb0c1;
-      font-size: .72rem;
-      line-height: 1.35;
-      text-align: right;
-    }
-    .showcase-actions strong {
-      color: white;
-      font-size: .74rem;
-    }
-    .showcase-actions a {
-      color: white;
-      font-weight: 750;
-      text-decoration: none;
-    }
+    .work-filters { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 18px; }
+    .work-filter { appearance: none; min-height: 34px; padding: 0 10px 0 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); color: var(--muted); font: inherit; font-size: .78rem; font-weight: 750; cursor: pointer; }
+    .work-filter span { display: inline-flex; align-items: center; justify-content: center; min-width: 20px; height: 20px; margin-left: 6px; padding: 0 6px; border-radius: 999px; background: var(--surface); color: var(--muted); font-size: .67rem; }
+    .work-filter:hover { border-color: #b8c5d2; color: var(--ink); }
+    .work-filter.is-active { border-color: var(--blue); background: var(--blue); color: white; }
+    .work-filter.is-active span { background: rgba(255,255,255,.16); color: white; }
+
+    .showcase-table-head { display: grid; grid-template-columns: 74px minmax(0, 1.05fr) minmax(290px, .95fr) 150px; gap: 20px; padding: 0 0 9px; color: var(--muted); font-size: .68rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+    .showcase-list { border-top: 1px solid var(--line); }
+    .showcase-entry { display: grid; grid-template-columns: 74px minmax(0, 1.05fr) minmax(290px, .95fr) 150px; gap: 20px; align-items: start; padding: 19px 0; border-bottom: 1px solid var(--line); }
+    .showcase-entry[hidden] { display: none; }
+    .showcase-date { padding-top: 2px; color: var(--blue); font-size: .74rem; font-weight: 800; line-height: 1.35; }
+    .showcase-main h3 { margin: 0; color: var(--ink); font-size: 1rem; line-height: 1.24; letter-spacing: -.012em; }
+    .showcase-main p { margin: 5px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.45; }
+    .showcase-skills-label { display: block; margin: 0 0 6px; color: var(--blue); font-size: .65rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .showcase-skill-set { display: flex; flex-wrap: wrap; gap: 5px; }
+    .showcase-skill { display: inline-flex; align-items: center; min-height: 23px; padding: 2px 7px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); color: var(--ink); font-size: .67rem; font-weight: 700; line-height: 1.2; white-space: nowrap; }
+    .showcase-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; color: var(--muted); font-size: .72rem; line-height: 1.35; text-align: right; }
+    .showcase-actions strong { color: var(--ink); font-size: .74rem; }
+    .showcase-actions a { color: var(--blue); font-weight: 750; text-decoration: none; }
     .showcase-actions a:hover { text-decoration: underline; }
-    .showcase-extra-links {
-      margin-top: 17px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 18px;
-      color: var(--dark-muted);
-      font-size: .78rem;
-    }
-    .showcase-extra-links a {
-      color: white;
-      font-weight: 700;
-      text-decoration: none;
-    }
-    .showcase-extra-links a:hover { text-decoration: underline; }
-    .recognition-line {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0;
-      margin-top: 27px;
-      border-top: 1px solid rgba(213,225,237,.18);
-      border-bottom: 1px solid rgba(213,225,237,.18);
-    }
-    .recognition-line > div,
-    .recognition-line > a {
-      padding: 16px 18px;
-      border-right: 1px solid rgba(213,225,237,.14);
-      color: var(--dark-muted);
-      font-size: .78rem;
-      line-height: 1.4;
-      text-decoration: none;
-    }
+    .recognition-line { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 26px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .recognition-line > div, .recognition-line > a { padding: 15px 18px; border-right: 1px solid var(--line); color: var(--muted); font-size: .78rem; line-height: 1.4; text-decoration: none; }
     .recognition-line > :first-child { padding-left: 0; }
     .recognition-line > :last-child { border-right: 0; padding-right: 0; }
-    .recognition-line strong {
-      display: block;
-      margin-bottom: 3px;
-      color: white;
-      font-size: .84rem;
-    }
+    .recognition-line strong { display: block; margin-bottom: 3px; color: var(--ink); font-size: .84rem; }
 
     @media (max-width: 980px) {
-      .showcase-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .showcase-stat:nth-child(3n) { border-right: 0; }
-      .showcase-stat:nth-child(-n+3) { border-bottom: 1px solid rgba(213,225,237,.14); }
-      .showcase-stat:first-child { padding-left: 14px; }
-      .showcase-stat:last-child { padding-right: 14px; }
-      .showcase-entry { grid-template-columns: 72px minmax(0, 1fr) minmax(230px, .8fr); }
+      .showcase-heading h2 { white-space: normal; }
+      .showcase-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .showcase-table-head, .showcase-entry { grid-template-columns: 64px minmax(0, 1fr) minmax(230px, .9fr); }
+      .showcase-table-head span:last-child { display: none; }
       .showcase-actions { grid-column: 2 / -1; flex-direction: row; align-items: center; justify-content: flex-start; text-align: left; }
     }
     @media (max-width: 820px) {
       .career-history { padding-top: 27px; }
       .career-step { flex: 0 1 auto; }
-      .showcase-entry { grid-template-columns: 70px minmax(0, 1fr); }
-      .showcase-skill-set, .showcase-actions { grid-column: 2; }
+      .showcase-table-head { display: none; }
+      .showcase-entry { grid-template-columns: 62px minmax(0, 1fr); gap: 9px 14px; }
+      .showcase-skills, .showcase-actions { grid-column: 2; }
       .recognition-line { grid-template-columns: 1fr; }
-      .recognition-line > div, .recognition-line > a { padding: 14px 0; border-right: 0; border-bottom: 1px solid rgba(213,225,237,.14); }
+      .recognition-line > div, .recognition-line > a { padding: 14px 0; border-right: 0; border-bottom: 1px solid var(--line); }
       .recognition-line > :last-child { border-bottom: 0; }
     }
     @media (max-width: 620px) {
       .career-history { margin-top: 38px; padding-top: 25px; }
       .career-track-label { font-size: .66rem; }
       .career-arrow { width: 17px; height: 17px; transform: rotate(90deg); }
-      .showcase-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .showcase-stat { padding: 14px 10px; border-bottom: 1px solid rgba(213,225,237,.14); }
-      .showcase-stat:nth-child(2n) { border-right: 0; }
-      .showcase-stat:nth-child(3n) { border-right: 1px solid rgba(213,225,237,.14); }
-      .showcase-stat:nth-child(6) { border-right: 0; }
-      .showcase-stat:first-child { padding-left: 10px; }
-      .showcase-stat:last-child { padding-right: 10px; }
-      .showcase-entry { grid-template-columns: 1fr; gap: 8px; padding: 18px 0; }
-      .showcase-date, .showcase-skill-set, .showcase-actions { grid-column: 1; }
+      .showcase-stats { grid-template-columns: 1fr; }
+      .showcase-entry { grid-template-columns: 1fr; gap: 7px; padding: 17px 0; }
+      .showcase-date, .showcase-skills, .showcase-actions { grid-column: 1; }
       .showcase-actions { margin-top: 3px; }
     }
   </style>
@@ -259,7 +93,7 @@
       <nav class="nav" aria-label="Primary navigation">
         <a href="#experience">Experience</a>
         <a href="#skills">Core Skills</a>
-        <a href="#achievements">Projects & Recognition</a>
+        <a href="#achievements">Projects & Writing</a>
         <a href="#research">Publications</a>
         <a href="https://github.com/pdfosborne" target="_blank" rel="noreferrer">GitHub ↗</a>
       </nav>
@@ -278,41 +112,26 @@
             <a class="button secondary" href="https://github.com/pdfosborne" target="_blank" rel="noreferrer">GitHub profile ↗</a>
           </div>
         </div>
-
         <div class="hero-side">
           <aside class="hero-profile" aria-label="Philip Osborne profile">
             <img class="profile-photo" src="https://avatars.githubusercontent.com/u/133358312?v=4" alt="Philip Osborne">
-            <div class="profile-details">
-              <strong>Philip Osborne</strong>
-              <span>London, UK</span>
-              <span>PhD in AI</span>
-              <a href="https://github.com/pdfosborne" target="_blank" rel="noreferrer">@pdfosborne ↗</a>
-            </div>
+            <div class="profile-details"><strong>Philip Osborne</strong><span>London, UK</span><span>PhD in AI</span><a href="https://github.com/pdfosborne" target="_blank" rel="noreferrer">@pdfosborne ↗</a></div>
           </aside>
-
           <a class="github-activity" href="https://github.com/pdfosborne" target="_blank" rel="noreferrer" aria-label="View Philip Osborne's GitHub contribution activity">
             <div class="activity-heading"><strong>GitHub contributions</strong><span>live activity</span></div>
-            <div class="contrib-chart-frame">
-              <img class="contrib-chart" src="https://ghchart.rshah.org/3d5a80/pdfosborne" alt="GitHub contribution calendar for pdfosborne">
-            </div>
+            <div class="contrib-chart-frame"><img class="contrib-chart" src="https://ghchart.rshah.org/3d5a80/pdfosborne" alt="GitHub contribution calendar for pdfosborne"></div>
             <div class="activity-counts"><span><strong>972</strong> in 2025</span><span><strong>707</strong> in 2026 YTD</span></div>
           </a>
         </div>
       </div>
-
       <div class="career-history" aria-label="My career and education history">
         <div class="career-track-label">My history</div>
         <div class="career-track">
-          <span class="career-step">BSc in Mathematics</span>
-          <span class="career-arrow" aria-hidden="true"></span>
-          <span class="career-step">Data Analyst</span>
-          <span class="career-arrow" aria-hidden="true"></span>
-          <span class="career-step">MSc in Data Science</span>
-          <span class="career-arrow" aria-hidden="true"></span>
-          <span class="career-step">Data Scientist</span>
-          <span class="career-arrow" aria-hidden="true"></span>
-          <span class="career-step">PhD in Artificial Intelligence</span>
-          <span class="career-arrow" aria-hidden="true"></span>
+          <span class="career-step">BSc in Mathematics</span><span class="career-arrow" aria-hidden="true"></span>
+          <span class="career-step">Data Analyst</span><span class="career-arrow" aria-hidden="true"></span>
+          <span class="career-step">MSc in Data Science</span><span class="career-arrow" aria-hidden="true"></span>
+          <span class="career-step">Data Scientist</span><span class="career-arrow" aria-hidden="true"></span>
+          <span class="career-step">PhD in Artificial Intelligence</span><span class="career-arrow" aria-hidden="true"></span>
           <span class="career-step career-current"><small>Current</small>Postdoctoral Researcher</span>
         </div>
       </div>
@@ -330,11 +149,7 @@
     </section>
 
     <section class="section shell" id="skills">
-      <div class="section-heading skills-heading">
-        <h2>Core Skills</h2>
-        <p>A quick qualification check first. Expand any capability to see the evidence behind it.</p>
-      </div>
-
+      <div class="section-heading skills-heading"><h2>Core Skills</h2><p>A quick qualification check first. Expand any capability to see the evidence behind it.</p></div>
       <div class="tech-index" aria-label="Technical skills quick list">
         <div class="tech-index-title"><strong>Technical stack</strong><span>Languages, modelling, data and delivery</span></div>
         <div class="tech-index-groups">
@@ -344,7 +159,6 @@
           <div class="tech-row"><span class="tech-label">Analysis & delivery</span><div class="tech-items"><span>Data preparation</span><span>Visualisation</span><span>Dashboards</span><span>Reporting</span><span>Experiment design</span><span>Deployment</span></div></div>
         </div>
       </div>
-
       <div class="skills-columns">
         <div class="skills-column">
           <h3 class="skills-group-title">Technical capabilities</h3>
@@ -354,7 +168,6 @@
           <details class="skill-expander"><summary>Experimentation, A/B testing & model evaluation</summary><div class="skill-detail"><p>Designing controlled comparisons, selecting meaningful metrics and checking whether improvements hold outside idealised conditions.</p><p class="skill-proof"><strong>Evidence:</strong> Designed comparative experiments throughout PhD and postdoctoral research; built automated side-by-side evaluation of agent and strategy variants; evaluated sim-to-real policy performance in a wind tunnel.</p></div></details>
           <details class="skill-expander"><summary>ML pipelines, MLOps & scalable compute</summary><div class="skill-detail"><p>Building repeatable training and evaluation workflows, running compute-intensive jobs remotely and moving models from development into usable systems.</p><p class="skill-proof"><strong>Evidence:</strong> Built Docker Compose training/evaluation workflows with checkpointed agents and multi-backend simulation; ran large training workloads on university Linux compute servers; deployed trained RL control to physical wind-tunnel hardware.</p></div></details>
         </div>
-
         <div class="skills-column">
           <h3 class="skills-group-title">Professional capabilities</h3>
           <details class="skill-expander"><summary>Communication & technical storytelling</summary><div class="skill-detail"><p>Explaining technical ideas clearly to audiences with very different levels of subject knowledge.</p><p class="skill-proof"><strong>Evidence:</strong> Guest lecturer at the University of Manchester and University of Oxford; mathematics tutor from 11+ to A-Level; technical writing reaching more than 400,000 views on Medium.</p></div></details>
@@ -366,87 +179,92 @@
       </div>
     </section>
 
-    <section class="section section-dark" id="achievements">
+    <section class="section showcase-section" id="achievements">
       <div class="shell">
-        <div class="section-heading compact inverse showcase-heading">
-          <h2>Independent Projects, Public Work & Recognition</h2>
+        <div class="section-heading compact showcase-heading"><h2>Projects, Technical Writing & Recognition</h2></div>
+
+        <div class="showcase-stats" aria-label="Headline activity and recognition statistics">
+          <a class="showcase-stat" href="https://github.com/pdfosborne" target="_blank" rel="noreferrer">
+            <div class="showcase-stat-head"><i data-lucide="github" aria-hidden="true"></i>GitHub activity</div>
+            <strong>1,679</strong><span>contributions · 972 in 2025 · 707 in 2026 YTD</span>
+          </a>
+          <a class="showcase-stat" href="https://github.com/pdfosborne/elsciRL" target="_blank" rel="noreferrer">
+            <div class="showcase-stat-head"><i data-lucide="star" aria-hidden="true"></i>Open-source traction</div>
+            <strong>18 <small>elsciRL</small> · 5 <small>Lunar</small></strong><span>GitHub stars on projects with more than one star</span>
+          </a>
+          <a class="showcase-stat" href="https://medium.com/@PhilipOsborne" target="_blank" rel="noreferrer">
+            <div class="showcase-stat-head"><i data-lucide="eye" aria-hidden="true"></i>Medium</div>
+            <strong>400k+ <small>views</small> · 1,300+ <small>followers</small></strong><span>technical writing across data science and machine learning</span>
+          </a>
+          <a class="showcase-stat" href="https://www.kaggle.com/osbornep" target="_blank" rel="noreferrer">
+            <div class="showcase-stat-head"><i data-lucide="trophy" aria-hidden="true"></i>Kaggle</div>
+            <strong>#350 <small>world rank</small> · 2 <small>Google awards</small></strong><span>highest Notebook Expert ranking and monetary awards</span>
+          </a>
         </div>
 
-        <div class="showcase-stats" aria-label="Public activity and recognition statistics">
-          <a class="showcase-stat" href="https://github.com/pdfosborne" target="_blank" rel="noreferrer"><strong>1,679</strong><span>GitHub contributions<br>2025–2026 YTD</span></a>
-          <a class="showcase-stat" href="https://github.com/pdfosborne/elsciRL" target="_blank" rel="noreferrer"><strong>18</strong><span>GitHub stars<br>elsciRL</span></a>
-          <a class="showcase-stat" href="https://medium.com/@PhilipOsborne" target="_blank" rel="noreferrer"><strong>400k+</strong><span>Technical article views<br>Medium</span></a>
-          <a class="showcase-stat" href="https://medium.com/@PhilipOsborne" target="_blank" rel="noreferrer"><strong>1,300+</strong><span>Technical writing followers<br>Medium</span></a>
-          <a class="showcase-stat" href="https://www.kaggle.com/osbornep" target="_blank" rel="noreferrer"><strong>#350</strong><span>Highest world ranking<br>Kaggle Notebook Expert</span></a>
-          <a class="showcase-stat" href="https://www.kaggle.com/osbornep" target="_blank" rel="noreferrer"><strong>2</strong><span>Monetary awards<br>Google via Kaggle</span></a>
+        <div class="work-filters" aria-label="Filter projects and articles by year">
+          <button class="work-filter is-active" type="button" data-year="all" aria-pressed="true">All <span>34</span></button>
+          <button class="work-filter" type="button" data-year="2026" aria-pressed="false">2026 <span>4</span></button>
+          <button class="work-filter" type="button" data-year="2025" aria-pressed="false">2025 <span>10</span></button>
+          <button class="work-filter" type="button" data-year="2024" aria-pressed="false">2024 <span>2</span></button>
+          <button class="work-filter" type="button" data-year="2023" aria-pressed="false">2023 <span>1</span></button>
+          <button class="work-filter" type="button" data-year="2019" aria-pressed="false">2019 <span>10</span></button>
+          <button class="work-filter" type="button" data-year="2018" aria-pressed="false">2018 <span>7</span></button>
         </div>
 
+        <div class="showcase-table-head" aria-hidden="true"><span>Date</span><span>Work</span><span>Skills used / developed</span><span>Proof & links</span></div>
         <div class="showcase-list">
-          <div class="showcase-entry">
-            <div class="showcase-date">2026<br>current</div>
-            <div class="showcase-main"><h3>Privacy-first group planning platform</h3><p>Independently designing and building a self-hosted group-planning product, including the product architecture, interaction design and implementation.</p></div>
-            <div class="showcase-skill-set"><span class="showcase-skill">JavaScript</span><span class="showcase-skill">HTML/CSS</span><span class="showcase-skill">Android</span><span class="showcase-skill">Product design</span><span class="showcase-skill">Self-hosting</span></div>
-            <div class="showcase-actions"><strong>Live product</strong><a href="https://phlipapp.com/Homepage" target="_blank" rel="noreferrer">View site ↗</a></div>
-          </div>
+          <article class="showcase-entry" data-year="2026"><div class="showcase-date">2026</div><div class="showcase-main"><h3>Privacy-first group planning platform</h3><p>Independently designing and building a self-hosted group-planning product, from product architecture and interaction design through implementation.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">JavaScript</span><span class="showcase-skill">HTML/CSS</span><span class="showcase-skill">Android</span><span class="showcase-skill">Product design</span><span class="showcase-skill">Self-hosting</span></div></div><div class="showcase-actions"><a href="https://phlipapp.com/Homepage" target="_blank" rel="noreferrer">Live site ↗</a></div></article>
+          <article class="showcase-entry" data-year="2026"><div class="showcase-date">2026</div><div class="showcase-main"><h3>Strategic game RL simulator</h3><p>Built a large-scale training and evaluation stack around a strategic card-game engine, with PPO agents and accelerated simulation.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">PyTorch</span><span class="showcase-skill">PPO</span><span class="showcase-skill">Gym APIs</span><span class="showcase-skill">Docker</span><span class="showcase-skill">C++ / pybind11</span><span class="showcase-skill">MLOps</span></div></div><div class="showcase-actions"><a href="https://github.com/pdfosborne/flesh-and-blood-rlbridge" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
+          <article class="showcase-entry" data-year="2026"><div class="showcase-date">2026</div><div class="showcase-main"><h3>RL Bridge</h3><p>Built an MCP plugin connecting language models to reinforcement-learning environments and automating how agents construct and train on RL problems.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">LLMs</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">MCP</span><span class="showcase-skill">Agent tooling</span></div></div><div class="showcase-actions"><a href="https://github.com/pdfosborne/rlbridge" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
+          <article class="showcase-entry" data-year="2026"><div class="showcase-date">2026</div><div class="showcase-main"><h3>Omarchy Everything customisation</h3><p>Forked and customised an Omarchy launcher/search plugin for navigating apps, tabs, buffers and agents from one interface.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Linux</span><span class="showcase-skill">Open source</span><span class="showcase-skill">Shell/configuration</span><span class="showcase-skill">UX</span><span class="showcase-skill">Developer tooling</span></div></div><div class="showcase-actions"><a href="https://github.com/pdfosborne/omarchy-everything" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
 
-          <div class="showcase-entry">
-            <div class="showcase-date">2026</div>
-            <div class="showcase-main"><h3>Strategic game RL simulator</h3><p>Built a large-scale training and evaluation stack around a strategic card-game engine, including PPO agents and accelerated simulation.</p></div>
-            <div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">PyTorch</span><span class="showcase-skill">PPO</span><span class="showcase-skill">Gym APIs</span><span class="showcase-skill">Docker</span><span class="showcase-skill">C++ / pybind11</span></div>
-            <div class="showcase-actions"><strong>★ 1 GitHub star</strong><a href="https://github.com/pdfosborne/flesh-and-blood-rlbridge" target="_blank" rel="noreferrer">GitHub ↗</a></div>
-          </div>
+          <article class="showcase-entry" data-year="2025"><div class="showcase-date">2025</div><div class="showcase-main"><h3>Omarchy Lunar theme</h3><p>Designed a dark, high-contrast Omarchy theme focused on reducing visual distraction, including Neovim and VS Code variants.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Linux desktop</span><span class="showcase-skill">Neovim</span><span class="showcase-skill">VS Code</span><span class="showcase-skill">UI theming</span><span class="showcase-skill">Visual design</span></div></div><div class="showcase-actions"><strong>5 GitHub stars</strong><a href="https://github.com/pdfosborne/omarchy-lunar-theme" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
+          <article class="showcase-entry" data-year="2025"><div class="showcase-date">2025</div><div class="showcase-main"><h3>Firefox ElevenLabs interface</h3><p>Built a lightweight browser extension for one-key text-to-speech using the ElevenLabs API to solve a practical accessibility need.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">JavaScript</span><span class="showcase-skill">Browser extensions</span><span class="showcase-skill">REST APIs</span><span class="showcase-skill">Accessibility</span></div></div><div class="showcase-actions"><a href="https://addons.mozilla.org/en-US/firefox/addon/elevenlabs-tts-interface/" target="_blank" rel="noreferrer">Firefox add-on ↗</a><a href="https://github.com/pdfosborne/firefox-elevenlabs" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
+          <article class="showcase-entry" data-year="2025"><div class="showcase-date">2025</div><div class="showcase-main"><h3>DnD AI Recap</h3><p>Built a pipeline that transcribes tabletop sessions, generates scene imagery from the transcript and composes the result into a recap video.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">OpenAI API</span><span class="showcase-skill">Transcription</span><span class="showcase-skill">Image generation</span><span class="showcase-skill">Video pipeline</span></div></div><div class="showcase-actions"><a href="https://github.com/pdfosborne/dnd-video-recap" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://youtu.be/k8tsXx1lR80" target="_blank" rel="noreferrer">Demo ↗</a></div></article>
+          <article class="showcase-entry" data-year="2025"><div class="showcase-date">2025</div><div class="showcase-main"><h3>Eva Plus VS Code theme</h3><p>Created a customised VS Code colour theme optimised around my Python development workflow.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">VS Code</span><span class="showcase-skill">Developer tooling</span><span class="showcase-skill">UI theming</span><span class="showcase-skill">Visual design</span></div></div><div class="showcase-actions"><a href="https://marketplace.visualstudio.com/items?itemName=PhilipOsborne.eva-plus-theme" target="_blank" rel="noreferrer">Marketplace ↗</a><a href="https://github.com/pdfosborne/eva-plus-theme" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
+          <article class="showcase-entry" data-year="2025"><div class="showcase-date">2025</div><div class="showcase-main"><h3>elsciRL VizDoom application</h3><p>Integrated a VizDoom environment into the elsciRL application structure for language-guided reinforcement-learning experiments.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">Simulation</span><span class="showcase-skill">Environment integration</span></div></div><div class="showcase-actions"><a href="https://github.com/pdfosborne/elsciRL-App-VizDoom" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
+          <article class="showcase-entry" data-year="2025"><div class="showcase-date">2025</div><div class="showcase-main"><h3>elsciRL Chess application</h3><p>Built a chess-based reinforcement-learning application with actions constrained using real human-player data.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">Game environments</span><span class="showcase-skill">Data filtering</span></div></div><div class="showcase-actions"><a href="https://github.com/pdfosborne/elsciRL-App-Chess" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
+          <article class="showcase-entry" data-year="2025"><div class="showcase-date">2025</div><div class="showcase-main"><h3>elsciRL Maze application</h3><p>Adapted natural-language reinforcement-learning maze problems into the elsciRL framework with configurable environments and reward signals.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">Environment design</span><span class="showcase-skill">Simulation</span></div></div><div class="showcase-actions"><a href="https://github.com/pdfosborne/elsciRL-App-Maze" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
+          <article class="showcase-entry" data-year="2025"><div class="showcase-date">2025</div><div class="showcase-main"><h3>HELIOS-RL</h3><p>Maintained the earlier research prototype that preceded elsciRL and informed its language-guided reinforcement-learning approach.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">NLP</span><span class="showcase-skill">Research prototyping</span></div></div><div class="showcase-actions"><a href="https://github.com/pdfosborne/HELIOS-RL" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
+          <article class="showcase-entry" data-year="2025"><div class="showcase-date">2025</div><div class="showcase-main"><h3>elsciRL TextWorld Express application</h3><p>Integrated fast text-game environments into elsciRL for language and reinforcement-learning experiments.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">NLP</span><span class="showcase-skill">Text games</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">Environment integration</span></div></div><div class="showcase-actions"><a href="https://github.com/pdfosborne/elsciRL-App-TextWorldExpress" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
+          <article class="showcase-entry" data-year="2025"><div class="showcase-date">2025</div><div class="showcase-main"><h3>elsciRL Classroom application</h3><p>Built a GridWorld-style classroom environment demonstrating instruction-driven reinforcement learning in an accessible example.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">GridWorld</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">Educational simulation</span></div></div><div class="showcase-actions"><a href="https://github.com/pdfosborne/elsciRL-App-Classroom" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
 
-          <div class="showcase-entry">
-            <div class="showcase-date">2026</div>
-            <div class="showcase-main"><h3>RL Bridge</h3><p>Built an MCP plugin connecting language models to reinforcement-learning environments and automating how agents construct and train on RL problems.</p></div>
-            <div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">LLMs</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">MCP</span><span class="showcase-skill">Agent tooling</span></div>
-            <div class="showcase-actions"><strong>★ 1 GitHub star</strong><a href="https://github.com/pdfosborne/rlbridge" target="_blank" rel="noreferrer">GitHub ↗</a></div>
-          </div>
+          <article class="showcase-entry" data-year="2024"><div class="showcase-date">2024</div><div class="showcase-main"><h3>elsciRL</h3><p>Turned doctoral research into an open-source framework for integrating natural-language and LLM-based solutions into reinforcement learning.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">LLMs / NLP</span><span class="showcase-skill">Framework design</span><span class="showcase-skill">Research translation</span></div></div><div class="showcase-actions"><strong>18 GitHub stars</strong><a href="https://elsci.org/" target="_blank" rel="noreferrer">Website ↗</a><a href="https://github.com/pdfosborne/elsciRL" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://github.com/pdfosborne/elsciRL-Wiki" target="_blank" rel="noreferrer">Wiki ↗</a><a href="https://arxiv.org/abs/2507.08705" target="_blank" rel="noreferrer">Paper ↗</a></div></article>
+          <article class="showcase-entry" data-year="2024"><div class="showcase-date">2024</div><div class="showcase-main"><h3>elsciRL Sailing simulation</h3><p>Built a sailboat navigation simulation for testing reinforcement-learning agents in a dynamic control problem.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">Simulation</span><span class="showcase-skill">Control</span><span class="showcase-skill">Navigation</span></div></div><div class="showcase-actions"><a href="https://github.com/pdfosborne/elsciRL-App-Sailing" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
+          <article class="showcase-entry" data-year="2023"><div class="showcase-date">2023</div><div class="showcase-main"><h3>elsciRL Gym FrozenLake application</h3><p>Integrated Gymnasium FrozenLake into the elsciRL application structure as a compact benchmark for instruction-guided agents.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">Gymnasium</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">Environment integration</span></div></div><div class="showcase-actions"><a href="https://github.com/pdfosborne/elsciRL-App-GymFrozenLake" target="_blank" rel="noreferrer">GitHub ↗</a></div></article>
 
-          <div class="showcase-entry">
-            <div class="showcase-date">2024–2025</div>
-            <div class="showcase-main"><h3>elsciRL</h3><p>Turned doctoral research into an open-source framework for integrating natural-language and LLM-based solutions into reinforcement learning.</p></div>
-            <div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">LLMs / NLP</span><span class="showcase-skill">Framework design</span><span class="showcase-skill">Research translation</span></div>
-            <div class="showcase-actions"><strong>★ 18 GitHub stars</strong><a href="https://elsci.org/" target="_blank" rel="noreferrer">Website ↗</a><a href="https://github.com/pdfosborne/elsciRL" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://arxiv.org/abs/2507.08705" target="_blank" rel="noreferrer">Paper ↗</a></div>
-          </div>
+          <article class="showcase-entry" data-year="2019"><div class="showcase-date">2019</div><div class="showcase-main"><h3>The Best Free Note-taking Software for Students and Educators! — Video</h3><p>Explored how interactive note-taking and knowledge-management tools can improve technical teaching and student workflows.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Technical communication</span><span class="showcase-skill">Education</span><span class="showcase-skill">Knowledge management</span><span class="showcase-skill">Productivity</span></div></div><div class="showcase-actions"><a href="https://medium.com/data-science/the-best-free-note-taking-software-for-students-and-educators-video-ce8366d18b55" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
+          <article class="showcase-entry" data-year="2019"><div class="showcase-date">2019</div><div class="showcase-main"><h3>Reinforcement Learning from Scratch without Complex Virtual Environment Packages</h3><p>Built a fully defined notebook environment to explain model-based and model-free reinforcement learning without complex simulation tooling.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">Experimentation</span><span class="showcase-skill">Jupyter</span></div></div><div class="showcase-actions"><a href="https://medium.com/data-science/reinforcement-learning-from-scratch-without-complex-virtual-environment-packages-631909a290c7" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
+          <article class="showcase-entry" data-year="2019"><div class="showcase-date">2019</div><div class="showcase-main"><h3>How I planned my meals with Reinforcement Learning on a budget</h3><p>Applied reinforcement learning to a practical constrained planning problem around cost and preferences.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">Optimisation</span><span class="showcase-skill">Planning</span><span class="showcase-skill">Python</span></div></div><div class="showcase-actions"><a href="https://medium.com/@PhilipOsborne" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
+          <article class="showcase-entry" data-year="2019"><div class="showcase-date">2019</div><div class="showcase-main"><h3>Was it Worth Studying a Data Science Masters?</h3><p>Reflected on the transition from analytics into data science and the technical and career value of postgraduate study.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Data science</span><span class="showcase-skill">Career communication</span><span class="showcase-skill">Technical writing</span></div></div><div class="showcase-actions"><a href="https://medium.com/data-science/was-it-worth-studying-a-data-science-masters-c469e5b3e020" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
+          <article class="showcase-entry" data-year="2019"><div class="showcase-date">2019</div><div class="showcase-main"><h3>How to apply Reinforcement Learning to real life planning problems</h3><p>Explained how reinforcement learning can be framed around practical planning problems with uncertain outcomes and controllable decisions.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">MDPs</span><span class="showcase-skill">Planning</span><span class="showcase-skill">Applied modelling</span></div></div><div class="showcase-actions"><a href="https://medium.com/free-code-camp/how-to-apply-reinforcement-learning-to-real-life-planning-problems-90f8fa3dc0c5" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
+          <article class="showcase-entry" data-year="2019"><div class="showcase-date">2019</div><div class="showcase-main"><h3>Reinforcement Learning from Scratch: Applying Model-free Methods and Evaluating Parameters in Detail</h3><p>Extended a notebook-based RL example with model-free methods and parameter evaluation.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">Q-learning</span><span class="showcase-skill">Experimentation</span><span class="showcase-skill">Jupyter</span></div></div><div class="showcase-actions"><a href="https://medium.com/towards-data-science/reinforcement-learning-from-scratch-simple-application-and-evaluating-parameters-in-detail-2dcee3de008c" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
+          <article class="showcase-entry" data-year="2019"><div class="showcase-date">2019</div><div class="showcase-main"><h3>The Best Note Taking/Task Manager App for Data Science Research Projects</h3><p>Reviewed how Notion can combine notes, tasks, project planning, literature review and technical research workflows.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Research workflow</span><span class="showcase-skill">Project management</span><span class="showcase-skill">Knowledge management</span><span class="showcase-skill">Technical communication</span></div></div><div class="showcase-actions"><a href="https://medium.com/data-science/the-best-note-taking-task-manager-app-for-data-science-research-projects-ddc82afaa509" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
+          <article class="showcase-entry" data-year="2019"><div class="showcase-date">2019</div><div class="showcase-main"><h3>Making Programming Easier with Keyboard Macros — Video</h3><p>Demonstrated keyboard macros for automating repetitive programming and data-science workflow steps.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Automation</span><span class="showcase-skill">Developer productivity</span><span class="showcase-skill">Programming workflow</span></div></div><div class="showcase-actions"><a href="https://medium.com/data-science/making-programming-easier-with-keyboard-macros-video-b3c2303a7881" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
+          <article class="showcase-entry" data-year="2019"><div class="showcase-date">2019</div><div class="showcase-main"><h3>Learning NLP Language Models with Real Data</h3><p>Explained probabilistic language models and demonstrated their calculation on real data with code.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">NLP</span><span class="showcase-skill">Language models</span><span class="showcase-skill">Python</span><span class="showcase-skill">Probability</span><span class="showcase-skill">Data analysis</span></div></div><div class="showcase-actions"><a href="https://medium.com/data-science/learning-nlp-language-models-with-real-data-cdff04c51c25" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
+          <article class="showcase-entry" data-year="2019"><div class="showcase-date">2019</div><div class="showcase-main"><h3>3 Tips to Improving Your Data Science Workflow</h3><p>Shared practical lessons for improving data-science work, project management and day-to-day technical workflow.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Data science workflow</span><span class="showcase-skill">Project management</span><span class="showcase-skill">Technical communication</span></div></div><div class="showcase-actions"><a href="https://medium.com/@PhilipOsborne" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
 
-          <div class="showcase-entry">
-            <div class="showcase-date">2025</div>
-            <div class="showcase-main"><h3>DnD AI Recap</h3><p>Built a pipeline that transcribes tabletop sessions, generates scene imagery from the transcript and composes the result into a recap video.</p></div>
-            <div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">OpenAI API</span><span class="showcase-skill">Transcription</span><span class="showcase-skill">Image generation</span><span class="showcase-skill">Video pipeline</span></div>
-            <div class="showcase-actions"><a href="https://github.com/pdfosborne/dnd-video-recap" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://youtu.be/k8tsXx1lR80" target="_blank" rel="noreferrer">Demo ↗</a></div>
-          </div>
-
-          <div class="showcase-entry">
-            <div class="showcase-date">2025</div>
-            <div class="showcase-main"><h3>Firefox ElevenLabs interface</h3><p>Built a lightweight browser extension for one-key text-to-speech using the ElevenLabs API to solve a practical accessibility need.</p></div>
-            <div class="showcase-skill-set"><span class="showcase-skill">JavaScript</span><span class="showcase-skill">Browser extensions</span><span class="showcase-skill">REST APIs</span><span class="showcase-skill">Accessibility</span></div>
-            <div class="showcase-actions"><strong>★ 1 GitHub star</strong><a href="https://addons.mozilla.org/en-US/firefox/addon/elevenlabs-tts-interface/" target="_blank" rel="noreferrer">Firefox add-on ↗</a><a href="https://github.com/pdfosborne/firefox-elevenlabs" target="_blank" rel="noreferrer">GitHub ↗</a></div>
-          </div>
-        </div>
-
-        <div class="showcase-extra-links">
-          <span>Also built:</span>
-          <a href="https://marketplace.visualstudio.com/items?itemName=PhilipOsborne.eva-plus-theme" target="_blank" rel="noreferrer">Eva Plus VS Code theme ↗</a>
-          <a href="https://github.com/pdfosborne/elsciRL-App-Chess" target="_blank" rel="noreferrer">Chess RL app ↗</a>
-          <a href="https://github.com/pdfosborne/elsciRL-App-Sailing" target="_blank" rel="noreferrer">Sailing simulation ↗</a>
-          <a href="https://github.com/pdfosborne/elsciRL-App-TextWorldExpress" target="_blank" rel="noreferrer">TextWorld Express ↗</a>
+          <article class="showcase-entry" data-year="2018"><div class="showcase-date">2018</div><div class="showcase-main"><h3>Reinforcement Learning from Scratch: Designing and Solving a Task All Within a Python Notebook</h3><p>Defined an RL environment from scratch and demonstrated value iteration and Q-learning in a self-contained notebook.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">Value iteration</span><span class="showcase-skill">Q-learning</span><span class="showcase-skill">Jupyter</span></div></div><div class="showcase-actions"><a href="https://medium.com/data-science/reinforcement-learning-from-scratch-designing-and-solving-a-task-all-within-a-python-notebook-48c40021da4" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
+          <article class="showcase-entry" data-year="2018"><div class="showcase-date">2018</div><div class="showcase-main"><h3>Building a Back to Uni/School Budget Computer for the First Time</h3><p>Documented selecting, assembling and cost-optimising a computer for data-science workloads.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Computer hardware</span><span class="showcase-skill">Systems thinking</span><span class="showcase-skill">Cost optimisation</span><span class="showcase-skill">Technical communication</span></div></div><div class="showcase-actions"><a href="https://medium.com/data-science/building-a-back-to-uni-school-budget-computer-for-the-first-time-3e1d2b2e048b" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
+          <article class="showcase-entry" data-year="2018"><div class="showcase-date">2018</div><div class="showcase-main"><h3>The Simplest & Cleanest Method for Tracking a For Loop’s Progress and Expected Run Time in Python Notebooks</h3><p>Created a lightweight method for monitoring loop progress, runtime and expected completion time in notebooks.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">Jupyter</span><span class="showcase-skill">Runtime monitoring</span><span class="showcase-skill">Developer tooling</span></div></div><div class="showcase-actions"><a href="https://medium.com/data-science/the-simplest-cleanest-method-for-tracking-a-for-loops-progress-and-expected-run-time-in-python-972675392b3" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
+          <article class="showcase-entry" data-year="2018"><div class="showcase-date">2018</div><div class="showcase-main"><h3>Building a Bot to counter Negative Comments on Reddit using Natural Language Processing</h3><p>Built a practical NLP bot around Reddit text to identify and respond to negative comments.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">NLP</span><span class="showcase-skill">Text processing</span><span class="showcase-skill">Bot development</span></div></div><div class="showcase-actions"><a href="https://medium.com/data-science/building-a-bot-to-counter-negative-comments-on-reddit-using-natural-language-processing-83177e5c8d32" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
+          <article class="showcase-entry" data-year="2018"><div class="showcase-date">2018</div><div class="showcase-main"><h3>Reinforcement Learning for Real Life Planning Problems</h3><p>Explored how reinforcement-learning methods can be applied to everyday planning and decision problems.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">Planning</span><span class="showcase-skill">MDPs</span><span class="showcase-skill">Applied modelling</span></div></div><div class="showcase-actions"><a href="https://medium.com/@PhilipOsborne" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
+          <article class="showcase-entry" data-year="2018"><div class="showcase-date">2018</div><div class="showcase-main"><h3>Reinforcement Learning for Meal Planning based on Meeting a Set Budget and Personal Preferences (Monte Carlo)</h3><p>Built a meal-planning model that balances budget constraints and personal preferences using reinforcement learning.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">Reinforcement learning</span><span class="showcase-skill">Monte Carlo</span><span class="showcase-skill">Optimisation</span><span class="showcase-skill">Kaggle</span></div></div><div class="showcase-actions"><a href="https://medium.com/data-science/reinforcement-learning-for-meal-planning-based-on-meeting-a-set-budget-and-personal-preferences-9624a520cce4" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
+          <article class="showcase-entry" data-year="2018"><div class="showcase-date">2018</div><div class="showcase-main"><h3>Creating Interactive Animation for Parameter Optimisation using Plot.ly</h3><p>Used interactive Plotly animation to explore model results across changing parameter values.</p></div><div class="showcase-skills"><span class="showcase-skills-label">Skills</span><div class="showcase-skill-set"><span class="showcase-skill">Python</span><span class="showcase-skill">Plotly</span><span class="showcase-skill">Data visualisation</span><span class="showcase-skill">Parameter optimisation</span></div></div><div class="showcase-actions"><a href="https://medium.com/data-science/creating-interactive-animation-for-parameter-optimisation-using-plot-ly-8136b2997db" target="_blank" rel="noreferrer">Medium ↗</a></div></article>
         </div>
 
         <div class="recognition-line">
           <div><strong>Commercialisation & Innovation Award</strong>University of Manchester Business School</div>
           <div><strong>Guest lecturer</strong>University of Manchester & University of Oxford</div>
-          <a href="https://elsci.org/" target="_blank" rel="noreferrer"><strong>US patent application 18/955718</strong>Filed for the elsciRL framework ↗</a>
+          <a href="https://elsci.org/" target="_blank" rel="noreferrer"><strong>US patent application 18/955718</strong>Associated with the elsciRL framework ↗</a>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft" id="research">
+    <section class="section" id="research">
       <div class="shell">
-        <div class="section-heading compact">
-          <h2>Publications</h2>
-          <p>Peer-reviewed and applied work across reinforcement learning, natural language processing and agentic AI.</p>
-        </div>
+        <div class="section-heading compact"><h2>Publications</h2><p>Peer-reviewed and applied work across reinforcement learning, natural language processing and agentic AI.</p></div>
         <div class="publication-list">
           <a class="publication" href="https://arxiv.org/abs/2507.08705" target="_blank" rel="noreferrer"><span class="pub-year">2025</span><span class="pub-body"><strong>elsciRL: Integrating Language Solutions into Reinforcement Learning Problem Settings</strong><small>Open-source systems work connecting language solutions with reinforcement-learning applications.</small></span><span class="arrow">↗</span></a>
           <a class="publication" href="https://research.manchester.ac.uk/en/studentTheses/improving-real-world-reinforcement-learning-by-self-completing-hu" target="_blank" rel="noreferrer"><span class="pub-year">2024</span><span class="pub-body"><strong>Improving Real-World Reinforcement Learning by Self-Completing Human Instructions</strong><small>PhD thesis on using natural-language instructions to improve real-world reinforcement learning.</small></span><span class="arrow">↗</span></a>
@@ -465,5 +283,21 @@
   </main>
 
   <footer class="footer"><div class="shell footer-inner"><span>Philip Osborne</span><span>Data science · Machine learning · Python</span></div></footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    if (window.lucide) lucide.createIcons();
+    const workFilters = document.querySelectorAll('.work-filter');
+    const workEntries = document.querySelectorAll('.showcase-entry');
+    workFilters.forEach(button => button.addEventListener('click', () => {
+      const year = button.dataset.year;
+      workFilters.forEach(item => {
+        const active = item === button;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      workEntries.forEach(entry => { entry.hidden = year !== 'all' && entry.dataset.year !== year; });
+    }));
+  </script>
 </body>
 </html>

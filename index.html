@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#ffffff">
   <title>Philip Osborne — Data Science & Machine Learning</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260910-9">
+  <link rel="stylesheet" href="styles.css?v=20260910-10">
   <style>
     .career-history {
       position: relative;
@@ -49,28 +49,16 @@
       -webkit-mask: url('arrow-right.svg') center / contain no-repeat;
       mask: url('arrow-right.svg') center / contain no-repeat;
     }
-    .career-next-block {
-      width: min(430px, 100%);
-      margin: 14px 0 0 auto;
-      padding: 15px 18px;
-      border: 1px solid #cfdae6;
-      border-radius: 10px;
-      background: linear-gradient(90deg, #f8fafc 0%, var(--blue-soft) 100%);
-      box-shadow: 0 8px 22px rgba(25, 47, 72, .04);
-    }
-    .career-next-block strong {
-      display: block;
-      color: var(--blue-dark);
-      font-size: .96rem;
+    .hero-status {
+      margin: 16px 0 0;
+      color: var(--blue);
+      font-size: .95rem;
       font-weight: 800;
-      line-height: 1.3;
       letter-spacing: -.01em;
-      text-align: center;
     }
     @media (max-width: 820px) {
       .career-history { padding-top: 27px; }
       .career-step { flex: 0 1 auto; }
-      .career-next-block { width: min(460px, 100%); }
     }
     @media (max-width: 620px) {
       .career-history { margin-top: 38px; padding-top: 25px; }
@@ -79,10 +67,6 @@
         width: 17px;
         height: 17px;
         transform: rotate(90deg);
-      }
-      .career-next-block {
-        width: 100%;
-        margin-top: 12px;
       }
     }
   </style>
@@ -107,6 +91,7 @@
         <div class="hero-main">
           <h1>Data Scientist & Machine Learning Researcher</h1>
           <p class="hero-copy">PhD in Artificial Intelligence with commercial data science experience and recent research applying reinforcement learning to physical control systems. Alongside this, I independently develop open-source ML frameworks and software products, taking unfamiliar technical problems from idea to working system.</p>
+          <p class="hero-status">Actively seeking new role</p>
           <div class="hero-actions">
             <a class="button primary" href="#experience">View experience</a>
             <a class="button secondary" href="https://github.com/pdfosborne" target="_blank" rel="noreferrer">GitHub profile ↗</a>
@@ -149,10 +134,6 @@
           <span class="career-arrow" aria-hidden="true"></span>
           <span class="career-step">Postdoctoral Researcher</span>
         </div>
-      </div>
-
-      <div class="career-next-block" aria-label="Seeking a data science or machine learning role">
-        <strong>Seeking Data Science or Machine Learning role</strong>
       </div>
     </section>
 

@@ -56,77 +56,123 @@
     </section>
 
     <section class="section shell" id="skills">
-      <div class="section-heading">
+      <div class="section-heading skills-heading">
         <h2>Core Skills</h2>
-        <p>Technical and professional skills backed by examples from commercial data science, research and independent engineering projects.</p>
+        <p>A quick qualification check first. Expand any capability to see the evidence behind it.</p>
+      </div>
+
+      <div class="tech-index" aria-label="Technical skills quick list">
+        <div class="tech-index-title">
+          <strong>Technical stack</strong>
+          <span>Languages, modelling, data and delivery</span>
+        </div>
+        <div class="tech-index-groups">
+          <div class="tech-row">
+            <span class="tech-label">Languages & data</span>
+            <div class="tech-items"><span>Python</span><span>SQL</span><span>JavaScript</span><span>C++</span><span>HTML/CSS</span><span>VBA</span></div>
+          </div>
+          <div class="tech-row">
+            <span class="tech-label">ML & statistics</span>
+            <div class="tech-items"><span>PyTorch</span><span>Machine Learning</span><span>Reinforcement Learning</span><span>PPO</span><span>LLMs / NLP</span><span>Experimentation / A/B testing</span><span>Model validation</span></div>
+          </div>
+          <div class="tech-row">
+            <span class="tech-label">Engineering & compute</span>
+            <div class="tech-items"><span>Git</span><span>Docker Compose</span><span>Linux</span><span>Gym APIs</span><span>pybind11</span><span>Cloud / HPC</span><span>MLOps / ML pipelines</span></div>
+          </div>
+          <div class="tech-row">
+            <span class="tech-label">Analysis & delivery</span>
+            <div class="tech-items"><span>Data preparation</span><span>Visualisation</span><span>Dashboards</span><span>Reporting</span><span>Experiment design</span><span>Deployment</span></div>
+          </div>
+        </div>
       </div>
 
       <div class="skills-columns">
         <div class="skills-column">
-          <h3 class="skills-group-title">Technical</h3>
+          <h3 class="skills-group-title">Technical capabilities</h3>
 
-          <article class="skill-item">
-            <h4>Machine learning & statistical modelling</h4>
-            <p class="skill-summary">Developing, comparing and evaluating models for practical problems rather than treating model choice as the end goal.</p>
-            <p class="skill-proof"><strong>Examples:</strong> Developed actuarial pricing and machine-learning predictions at Psyon; developed and evaluated reinforcement-learning methods throughout my PhD and postdoctoral research.</p>
-            <div class="skill-tags"><span>Python</span><span>PyTorch</span><span>Machine Learning</span><span>Reinforcement Learning</span><span>PPO</span></div>
-          </article>
+          <details class="skill-expander">
+            <summary>Machine learning & statistical modelling</summary>
+            <div class="skill-detail">
+              <p>Developing, comparing and evaluating models for practical problems rather than treating model choice as the end goal.</p>
+              <p class="skill-proof"><strong>Evidence:</strong> Developed actuarial pricing and machine-learning predictions at Psyon; developed and evaluated reinforcement-learning methods throughout my PhD and postdoctoral research.</p>
+            </div>
+          </details>
 
-          <article class="skill-item">
-            <h4>Python & ML engineering</h4>
-            <p class="skill-summary">Building reusable research and training software, with attention to reproducibility, performance and maintainability.</p>
-            <p class="skill-proof"><strong>Examples:</strong> Independently built the elsciRL open-source Python framework and a large-scale strategic-game RL stack with Gym-compatible APIs and C++/pybind11 acceleration.</p>
-            <div class="skill-tags"><span>Python</span><span>Git</span><span>PyTorch</span><span>C++</span><span>pybind11</span><span>Gym APIs</span></div>
-          </article>
+          <details class="skill-expander">
+            <summary>Python & ML engineering</summary>
+            <div class="skill-detail">
+              <p>Building reusable research and training software with attention to reproducibility, performance and maintainability.</p>
+              <p class="skill-proof"><strong>Evidence:</strong> Independently built the elsciRL open-source Python framework and a large-scale strategic-game RL stack with Gym-compatible APIs and C++/pybind11 acceleration.</p>
+            </div>
+          </details>
 
-          <article class="skill-item">
-            <h4>SQL, data preparation & visualisation</h4>
-            <p class="skill-summary">Taking raw data through validation, transformation, analysis and clear reporting.</p>
-            <p class="skill-proof"><strong>Examples:</strong> Retrieved, validated and transformed SQL data at Psyon for analytical modelling and client reporting; built dashboards and automated chart-generation workflows.</p>
-            <div class="skill-tags"><span>SQL</span><span>Data validation</span><span>Data transformation</span><span>Dashboards</span><span>Reporting</span></div>
-          </article>
+          <details class="skill-expander">
+            <summary>SQL, data preparation & visualisation</summary>
+            <div class="skill-detail">
+              <p>Taking raw data through validation, transformation and analysis into reporting that supports decisions.</p>
+              <p class="skill-proof"><strong>Evidence:</strong> Retrieved, validated and transformed SQL data at Psyon for analytical modelling and client reporting; built dashboards and automated chart-generation workflows.</p>
+            </div>
+          </details>
 
-          <article class="skill-item">
-            <h4>Experimentation, A/B testing & model evaluation</h4>
-            <p class="skill-summary">Designing controlled comparisons, selecting meaningful metrics and testing whether observed improvements hold outside idealised conditions.</p>
-            <p class="skill-proof"><strong>Examples:</strong> Designed comparative experiments throughout PhD and postdoctoral research; built automated side-by-side evaluation of agent and strategy variants in an RL simulation project; evaluated sim-to-real policy performance in a wind tunnel.</p>
-            <div class="skill-tags"><span>A/B testing</span><span>Experiment design</span><span>Model validation</span><span>Performance metrics</span><span>Sim-to-real</span></div>
-          </article>
+          <details class="skill-expander">
+            <summary>Experimentation, A/B testing & model evaluation</summary>
+            <div class="skill-detail">
+              <p>Designing controlled comparisons, selecting meaningful metrics and checking whether improvements hold outside idealised conditions.</p>
+              <p class="skill-proof"><strong>Evidence:</strong> Designed comparative experiments throughout PhD and postdoctoral research; built automated side-by-side evaluation of agent and strategy variants; evaluated sim-to-real policy performance in a wind tunnel.</p>
+            </div>
+          </details>
 
-          <article class="skill-item">
-            <h4>ML pipelines, MLOps & scalable compute</h4>
-            <p class="skill-summary">Building repeatable training and evaluation workflows, running compute-intensive jobs remotely and moving models from development into usable systems.</p>
-            <p class="skill-proof"><strong>Examples:</strong> Built Docker Compose training/evaluation workflows with checkpointed agents and multi-backend simulation; ran large simulation and model-training workloads on university Linux compute servers; deployed a trained RL control pipeline to physical wind-tunnel hardware.</p>
-            <div class="skill-tags"><span>MLOps</span><span>Docker Compose</span><span>Linux</span><span>Cloud / HPC</span><span>Parallel training</span><span>Deployment</span></div>
-          </article>
+          <details class="skill-expander">
+            <summary>ML pipelines, MLOps & scalable compute</summary>
+            <div class="skill-detail">
+              <p>Building repeatable training and evaluation workflows, running compute-intensive jobs remotely and moving models from development into usable systems.</p>
+              <p class="skill-proof"><strong>Evidence:</strong> Built Docker Compose training/evaluation workflows with checkpointed agents and multi-backend simulation; ran large training workloads on university Linux compute servers; deployed trained RL control to physical wind-tunnel hardware.</p>
+            </div>
+          </details>
         </div>
 
         <div class="skills-column">
-          <h3 class="skills-group-title">Professional</h3>
+          <h3 class="skills-group-title">Professional capabilities</h3>
 
-          <article class="skill-item">
-            <h4>Communication</h4>
-            <p class="skill-summary">Explaining technical ideas clearly to audiences with very different levels of subject knowledge.</p>
-            <p class="skill-proof"><strong>Examples:</strong> Guest lecturer at the University of Manchester and University of Oxford; mathematics tutor from 11+ to A-Level; technical writing reaching more than 400,000 views on Medium.</p>
-          </article>
+          <details class="skill-expander">
+            <summary>Communication & technical storytelling</summary>
+            <div class="skill-detail">
+              <p>Explaining technical ideas clearly to audiences with very different levels of subject knowledge.</p>
+              <p class="skill-proof"><strong>Evidence:</strong> Guest lecturer at the University of Manchester and University of Oxford; mathematics tutor from 11+ to A-Level; technical writing reaching more than 400,000 views on Medium.</p>
+            </div>
+          </details>
 
-          <article class="skill-item">
-            <h4>Stakeholder management & expectation setting</h4>
-            <p class="skill-summary">Keeping technical work aligned with the people who depend on it, including communicating constraints, results and trade-offs.</p>
-            <p class="skill-proof"><strong>Examples:</strong> Worked with engineering researchers and an industry partner on applied RL experiments; produced client reporting at Psyon and presented analytical findings to multinational clients at Aon.</p>
-          </article>
+          <details class="skill-expander">
+            <summary>Stakeholder management & expectation setting</summary>
+            <div class="skill-detail">
+              <p>Keeping technical work aligned with the people who depend on it, including communicating constraints, results and trade-offs.</p>
+              <p class="skill-proof"><strong>Evidence:</strong> Worked with engineering researchers and an industry partner on applied RL experiments; produced client reporting at Psyon and presented analytical findings to multinational clients at Aon.</p>
+            </div>
+          </details>
 
-          <article class="skill-item">
-            <h4>Problem framing & business judgement</h4>
-            <p class="skill-summary">Turning an open-ended question into an analytical problem that can produce a useful decision or recommendation.</p>
-            <p class="skill-proof"><strong>Examples:</strong> Applied data science to actuarial pricing and client reporting at Psyon; developed analytical models from multinational benefits data at Aon and presented the implications to clients.</p>
-          </article>
+          <details class="skill-expander">
+            <summary>Problem framing & business judgement</summary>
+            <div class="skill-detail">
+              <p>Turning an open-ended question into an analytical problem that can produce a useful decision or recommendation.</p>
+              <p class="skill-proof"><strong>Evidence:</strong> Applied data science to actuarial pricing and client reporting at Psyon; developed analytical models from multinational benefits data at Aon and presented the implications to clients.</p>
+            </div>
+          </details>
 
-          <article class="skill-item">
-            <h4>Independent ownership & active learning</h4>
-            <p class="skill-summary">Comfortable working through ambiguity, learning unfamiliar tools and taking projects from an initial idea to a usable result.</p>
-            <p class="skill-proof"><strong>Examples:</strong> Took elsciRL from research concept to open-source framework, paper and patent application; independently built projects spanning RL simulation, C++ acceleration and a self-hosted JavaScript group-planning platform.</p>
-          </article>
+          <details class="skill-expander">
+            <summary>Cross-functional collaboration</summary>
+            <div class="skill-detail">
+              <p>Working effectively across technical disciplines and adapting analysis to the needs of different collaborators.</p>
+              <p class="skill-proof"><strong>Evidence:</strong> Collaborated with engineering researchers and an industry partner at Bath; co-authored interdisciplinary research on agentic AI misuse; worked across research, software and domain-specific teams.</p>
+            </div>
+          </details>
+
+          <details class="skill-expander">
+            <summary>Independent ownership & active learning</summary>
+            <div class="skill-detail">
+              <p>Working through ambiguity, learning unfamiliar tools and taking projects from an initial idea to a usable result.</p>
+              <p class="skill-proof"><strong>Evidence:</strong> Took elsciRL from research concept to open-source framework, paper and patent application; independently built projects spanning RL simulation, C++ acceleration and a self-hosted JavaScript group-planning platform.</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>

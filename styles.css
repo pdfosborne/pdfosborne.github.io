@@ -524,3 +524,21 @@ a { color: inherit; }
 @media (max-width: 620px) {
   .showcase-stats { grid-template-columns: 1fr !important; }
 }
+
+/* Page order: hero, experience, core skills, publications, projects & writing, closing */
+main {
+  display: flex;
+  flex-direction: column;
+}
+main > .hero { order: 1; }
+main > #experience { order: 2; }
+main > #skills { order: 3; }
+main > #research { order: 4; }
+main > #achievements { order: 5; }
+main > .closing { order: 6; }
+
+.nav a[href="#experience"] { order: 1; }
+.nav a[href="#skills"] { order: 2; }
+.nav a[href="#research"] { order: 3; }
+.nav a[href="#achievements"] { order: 4; }
+.nav a[href^="https://github.com/"] { order: 5; }

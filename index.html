@@ -7,14 +7,14 @@
   <meta name="theme-color" content="#ffffff">
   <title>Philip Osborne — Data Science & Machine Learning</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260910-7">
+  <link rel="stylesheet" href="styles.css?v=20260910-8">
   <style>
     .career-history {
       position: relative;
       margin-top: 48px;
       padding: 29px 0 22px;
-      overflow: hidden;
-      background: linear-gradient(90deg, rgba(237,242,247,0) 0%, rgba(237,242,247,0) 56%, rgba(237,242,247,.24) 70%, rgba(61,90,128,.10) 100%);
+      overflow: visible;
+      background: none;
     }
     .career-track-label {
       position: absolute;
@@ -38,11 +38,6 @@
       gap: 7px;
     }
     .career-step { flex: 1 1 0; }
-    .career-next {
-      flex: 1.28 1 0;
-      color: var(--blue-dark);
-    }
-    .career-next strong { font-weight: 820; }
     .career-arrow {
       display: inline-block;
       flex: 0 0 18px;
@@ -54,26 +49,49 @@
       -webkit-mask: url('arrow-right.svg') center / contain no-repeat;
       mask: url('arrow-right.svg') center / contain no-repeat;
     }
-    .career-arrow-next { background: var(--blue); }
+    .career-next-block {
+      width: min(390px, 100%);
+      margin: 12px 0 0 auto;
+      padding: 13px 16px;
+      display: grid;
+      grid-template-columns: auto 18px minmax(0, 1fr);
+      align-items: center;
+      gap: 11px;
+      border-left: 2px solid var(--blue);
+      background: linear-gradient(90deg, rgba(237,242,247,.35), rgba(61,90,128,.12));
+    }
+    .career-next-label {
+      color: var(--blue);
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .career-next-block .career-arrow { background: var(--blue); }
+    .career-next-block strong {
+      color: var(--blue-dark);
+      font-size: .9rem;
+      line-height: 1.2;
+    }
     @media (max-width: 820px) {
-      .career-history {
-        padding-top: 27px;
-        background: linear-gradient(90deg, rgba(237,242,247,0) 0%, rgba(237,242,247,0) 42%, rgba(237,242,247,.28) 66%, rgba(61,90,128,.10) 100%);
-      }
+      .career-history { padding-top: 27px; }
       .career-step { flex: 0 1 auto; }
     }
     @media (max-width: 620px) {
-      .career-history {
-        margin-top: 38px;
-        padding-top: 25px;
-        background: linear-gradient(180deg, rgba(237,242,247,0) 0%, rgba(237,242,247,0) 62%, rgba(61,90,128,.10) 100%);
-      }
+      .career-history { margin-top: 38px; padding-top: 25px; }
       .career-track-label { font-size: .66rem; }
       .career-arrow {
         width: 17px;
         height: 17px;
         transform: rotate(90deg);
       }
+      .career-next-block {
+        width: 100%;
+        margin-top: 12px;
+        grid-template-columns: auto 17px minmax(0, 1fr);
+      }
+      .career-next-block .career-arrow { transform: none; }
     }
   </style>
 </head>
@@ -124,23 +142,27 @@
         </div>
       </div>
 
-      <div class="career-history" aria-label="My history from education to seeking a new industry role">
+      <div class="career-history" aria-label="My career and education history">
         <div class="career-track-label">My history</div>
         <div class="career-track">
           <span class="career-step">BSc in Mathematics</span>
-          <span class="career-arrow" aria-hidden="true">→</span>
+          <span class="career-arrow" aria-hidden="true"></span>
           <span class="career-step">Data Analyst</span>
-          <span class="career-arrow" aria-hidden="true">→</span>
+          <span class="career-arrow" aria-hidden="true"></span>
           <span class="career-step">MSc in Data Science</span>
-          <span class="career-arrow" aria-hidden="true">→</span>
+          <span class="career-arrow" aria-hidden="true"></span>
           <span class="career-step">Data Scientist</span>
-          <span class="career-arrow" aria-hidden="true">→</span>
+          <span class="career-arrow" aria-hidden="true"></span>
           <span class="career-step">PhD in Artificial Intelligence</span>
-          <span class="career-arrow" aria-hidden="true">→</span>
+          <span class="career-arrow" aria-hidden="true"></span>
           <span class="career-step">Postdoctoral Researcher</span>
-          <span class="career-arrow career-arrow-next" aria-hidden="true">→</span>
-          <span class="career-step career-next"><strong>Seeking new industry role</strong></span>
         </div>
+      </div>
+
+      <div class="career-next-block" aria-label="Next step: seeking new industry role">
+        <span class="career-next-label">Next step</span>
+        <span class="career-arrow" aria-hidden="true"></span>
+        <strong>Seeking new industry role</strong>
       </div>
     </section>
 
